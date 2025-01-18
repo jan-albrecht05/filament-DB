@@ -1,0 +1,9 @@
+:root{
+    --user-main-color: rgb(255, 0, 221);
+    --user-add-color: rgb(218, 0, 189);
+    --font-color: #ccc;
+    --bg-color: #262626;
+    --bg-highlight-color: #303030;
+    --bg-highlight2-color: #404040;
+    --shadow: rgb(31, 31, 31);
+}
