@@ -5,10 +5,11 @@ Apache Webserver: db.vault.homburgschule.de ?
 ## To-Do:
 
 - [ ] Homepage:
-    - QR-Scanner
-    - Text-input
-    - Sort by: Farbe, Material, Dicke
-- [ ] Datenbank aus:
+    - [ ] QR-Scanner
+    - [x] Text-input
+    - [ ] Sort by: Farbe, Material, Dicke
+    - [ ] last used filemants anzeigen/vorschlagen
+- [x] Datenbank aus:
     - Nummer
     - Hersteller
     - Material
@@ -21,11 +22,11 @@ Apache Webserver: db.vault.homburgschule.de ?
     - Hotend temp.
     - Printbed temp.
     - Additional Info
+- [ ] Page for adding content
 - [ ] Filament-page:
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
 - [ ] (zweite Datenbank mit Nutzerdaten)? : .htaccess
-- [ ] Page for adding content
 - [ ] QR-Codes / Nummern für Spulen
 - [ ] Bilder der Benchys
 - [ ] hinzufügen der einzelnen Filamente
