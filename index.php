@@ -15,7 +15,7 @@
        
     <div id="header">
         <div id="inner-header">
-            <a id="logo" hraf="#" class="center">
+            <a id="logo" href="#" class="center">
                 <img id="logoimg" src="assets/icons/filament-DB.png" alt="Filament-DB" title="Home">
             </a>
             <div id="suche" class="center">
@@ -24,7 +24,7 @@
             </div>
             <div id="user" class="center">
                 <div id="user-name">
-                    Hello <i>Gast</i>
+                    Hallo <i>Gast</i>
                 </div>
                 <div id="user-profile-img">
                     <img src="assets/icons/user.png" title="Gast" alt="Gast">

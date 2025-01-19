@@ -94,7 +94,64 @@ img{
     border-radius: 35px;
     margin-left: 15%;
 }
+#main{
+    margin-top: 2rem;
+    margin-inline: auto;
+    width: 80%;
+}
+#add-form{
+    width: 100%;
+    display: block    ;
+}
+#add-form label{
+    width: 15%;
+    display: inline-block;
+}
+#add form label input #bed-temp::after,
+#add form label input #nozzle-temp::after{
+    content: "°C";
+}
+#add-form #diameter-input,
+#add-form #diameter-radio{
+    display: flex;
+}
+#add-form #diameter-input #diameter1{
+    width: 40%;
+}
+#add-form #buttons{
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
+}
+#add-form #buttons button{
+    width: 12%;
+    height: 3rem;
+    font-size: 120%;
+    border-radius: 5px;
+    border-style: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .2s;
+}
+#add-form #buttons #savebtn{
+    background-color: var(--user-main-color);
+    color: var(--font-color);
+    margin-right: 2rem;
+}
+#add-form #buttons #resetbtn{
+    background-color: var(--background-color);
+    color: var(--font-color);
+    border: 2px solid var(--font-color);
+}
 
+@media (max-width:1100px) {
+    #add-form label{
+        width: 30%;
+    }
+    #add-form #diameter-input #diameter1{
+        width: 100%;
+    }
+}
 @media (max-width:600px) {
     #header{
         height: 4rem;
@@ -126,5 +183,14 @@ img{
     }
     #user-profile-img img{
         width: 3rem;
+    }
+    #add-form label{
+        width: 40%;
+    }
+    #add-form #diameter-radio{
+        display: block;
+    }
+    #add-form #diameter-input #diameter1{
+        width: 70%;
     }
 }

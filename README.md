@@ -22,7 +22,8 @@ Apache Webserver: db.vault.homburgschule.de ?
     - Hotend temp.
     - Printbed temp.
     - Additional Info
-- [ ] Page for adding content
+- [x] Page for adding content
+→   <u> [ ] connecting to DB</u>
 - [ ] Filament-page:
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
