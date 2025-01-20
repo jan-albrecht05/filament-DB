@@ -28,6 +28,7 @@ Apache Webserver: db.vault.homburgschule.de ?
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
 - [ ] (zweite Datenbank mit Nutzerdaten)? : .htaccess
+- [ ] costom color toggle
 - [ ] QR-Codes / Nummern für Spulen
 - [ ] Bilder der Benchys
 - [ ] hinzufügen der einzelnen Filamente
