@@ -56,6 +56,8 @@
             <input type="number" id="weight" name="weight" placeholder="Gewicht der Spule" required><br>
             <label for="owner">Besitzer:</label>
             <input type="text" id="owner" name="owner" placeholder="Besitzer der Spule" required><br>
+            <label for="anzahl">Anzahl Spulen.:</label>
+            <input type="number" id="anzahl" name="anzahl" value="1" required><br>
             <label for="bed-temmp">Bed-temp.:</label>
             <input type="number" id="bed-temmp" name="bed-temmp" value="60" required><br>
             <label for="nozzle-temmp">Nozzle-temp.:</label>
@@ -99,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $weight = $_POST['weight'];
     $price = $_POST['price'];
     $manufacturer = $_POST['manufacturer'];
+    $anzahl = $_POST['anzahl'];
     $nozzle_temp = $_POST['nozzle_temp'];
     $bed_temp = $_POST['bed_temp'];
     $owner = $_POST['owner'];
@@ -106,8 +109,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $image2 = $_POST['image2'];
     $additional_info = $_POST['additional_info'];
 
-    $sql = "INSERT INTO filaments (id, name, type, color, diameter, weight, price, manufacturer, nozzle_temp, bed_temp, owner, image1, image2, additional_info) 
-            VALUES ('$next_id', '$name', '$type', '$color', '$diameter', '$weight', '$price', '$manufacturer', '$nozzle_temp', '$bed_temp', '$owner', '$image1', '$image2', '$additional_info')";
+    $sql = "INSERT INTO filaments (id, name, type, color, diameter, weight, price, manufacturer, anzahl, nozzle_temp, bed_temp, owner, image1, image2, additional_info) 
+            VALUES ('$next_id', '$name', '$type', '$color', '$diameter', '$weight', '$price', '$manufacturer', '$anzahl', '$nozzle_temp', '$bed_temp', '$owner', '$image1', '$image2', '$additional_info')";
 
     if ($conn->exec($sql)) {
         echo "New record created successfully";

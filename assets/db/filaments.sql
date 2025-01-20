@@ -16,6 +16,7 @@ CREATE TABLE filament (
     besitzer VARCHAR(25) NOT NULL,
     bed-temp INT(3) NOT NULL,
     nozzle-temp INT(3) NOT NULL,
+    anzahl INT(3) NOT NULL,
     price INT(7) NOT NULL,
     gewicht INT(4) NOT NULL,
     tipps VARCHAR(255) NOT NULL
