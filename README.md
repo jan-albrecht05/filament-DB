@@ -17,6 +17,7 @@ Apache Webserver: db.vault.homburgschule.de ?
     - Dicke
     - Owner
     - Gewicht
+    - Anzahl Spulen
     - Preis pro Spule
     - Bild vom Benchy
     - Hotend temp.

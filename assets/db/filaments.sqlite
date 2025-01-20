@@ -1,0 +1,18 @@
+-- Erstelle die Tabelle 'filaments'
+CREATE TABLE IF NOT EXISTS filaments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    type TEXT NOT NULL,
+    color TEXT NOT NULL,
+    diameter REAL NOT NULL,
+    weight REAL NOT NULL,
+    price REAL NOT NULL,
+    manufacturer TEXT NOT NULL,
+    anzahl INTEGER NOT NULL,
+    nozzle_temp INTEGER NOT NULL,
+    bed_temp INTEGER NOT NULL,
+    owner TEXT NOT NULL,
+    image1 TEXT,
+    image2 TEXT,
+    additional_info TEXT
+);

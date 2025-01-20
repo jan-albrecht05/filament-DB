@@ -73,53 +73,45 @@
                 <button id="resetbtn" type="reset">reset</button>
             </div>
         </form>
-    </div>
         <?php
-// Database connection
-$dbpath = '../assets/db/filaments.db';
+// Datenbankpfad
+$dbpath = '../assets/db/filaments.sqlite'; // SQLite-Datenbankdatei
 
-// Create connection
+// Überprüfen, ob die Datenbank existiert
+if (!file_exists($dbpath)) {
+    die("Die Datenbankdatei wurde nicht gefunden: $dbpath");
+}
+
+// Verbindung zur SQLite-Datenbank herstellen
 $conn = new SQLite3($dbpath);
 
-// Check connection
+// Verbindung überprüfen
 if (!$conn) {
-    die("Connection failed: " . $conn->lastErrorMsg());
+    die("Verbindung zur SQLite-Datenbank fehlgeschlagen: " . $conn->lastErrorMsg());
 }
 
-// Get the next free ID
+// Nächste ID ermitteln
 $sql = "SELECT MAX(id) AS max_id FROM filaments";
 $result = $conn->query($sql);
-$row = $result->fetchArray(SQLITE3_ASSOC);
-$next_id = $row['max_id'] + 1;
 
-// Insert form data into the database
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $type = $_POST['type'];
-    $color = $_POST['color'];
-    $diameter = $_POST['diameter'];
-    $weight = $_POST['weight'];
-    $price = $_POST['price'];
-    $manufacturer = $_POST['manufacturer'];
-    $anzahl = $_POST['anzahl'];
-    $nozzle_temp = $_POST['nozzle_temp'];
-    $bed_temp = $_POST['bed_temp'];
-    $owner = $_POST['owner'];
-    $image1 = $_POST['image1'];
-    $image2 = $_POST['image2'];
-    $additional_info = $_POST['additional_info'];
-
-    $sql = "INSERT INTO filaments (id, name, type, color, diameter, weight, price, manufacturer, anzahl, nozzle_temp, bed_temp, owner, image1, image2, additional_info) 
-            VALUES ('$next_id', '$name', '$type', '$color', '$diameter', '$weight', '$price', '$manufacturer', '$anzahl', '$nozzle_temp', '$bed_temp', '$owner', '$image1', '$image2', '$additional_info')";
-
-    if ($conn->exec($sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->lastErrorMsg();
-    }
+// Fehler abfangen, falls die Abfrage fehlschlägt
+if (!$result) {
+    die("Fehler bei der Abfrage: " . $conn->lastErrorMsg());
 }
 
+$row = $result->fetchArray(SQLITE3_ASSOC);
+
+if ($row) {
+    $next_id = $row['max_id'] + 1;
+    echo "Nächste ID ist: $next_id";
+} else {
+    echo "Keine Daten vorhanden, starte ID bei 1.";
+    $next_id = 1;
+}
+
+// Verbindung schließen
 $conn->close();
 ?>
+    </div>
 </body>
 </html>

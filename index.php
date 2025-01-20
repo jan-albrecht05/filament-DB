@@ -33,9 +33,9 @@
         </div>
     </div>
     <div id="main">
-        <a href="pages/add.php">hinzufüen</a>
+        <a href="pages/add.php" style="color:red">zum Hinzufügen</a><br><br>
+        <span class="PHP-Check">Let's see, if this works!</span><br>
         <?php
-            echo "Let's see, if this works!<br>";
             echo "Yes, it does.";
         ?> 
     </div>
