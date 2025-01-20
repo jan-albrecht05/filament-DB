@@ -33,6 +33,7 @@
         </div>
     </div>
     <div id="main">
+        <a href="pages/add.php">hinzufüen</a>
         <?php
             echo "Let's see, if this works!<br>";
             echo "Yes, it does.";
