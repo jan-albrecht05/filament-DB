@@ -24,6 +24,7 @@ Apache Webserver: db.vault.homburgschule.de ?
     - Hotend temp.
     - Printbed temp.
     - Additional Info
+    - active: true/false
 - [x] Page for adding content
 →   <u> [ ] connecting to DB</u>
 - [ ] Filament-page:
