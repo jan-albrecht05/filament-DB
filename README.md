@@ -7,7 +7,7 @@ Apache Webserver: db.vault.homburgschule.de ?
 - [ ] Homepage:
     - [ ] QR-Scanner
     - [x] Text-input
-    - [ ] Heading.js
+    - [x] Heading.js
     - [ ] Sort by: Farbe, Material, Dicke
     - [ ] last used filemants anzeigen/vorschlagen
 - [x] Datenbank aus:

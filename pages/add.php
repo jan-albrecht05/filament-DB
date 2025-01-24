@@ -8,30 +8,14 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/root.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search">
+    <script src="../assets/js/heading.js"></script>
 </head>
 <body>
-    <div id="header">
-        <div id="inner-header">
-            <a id="logo" href="../index.php" class="center">
-                <img id="logoimg" src="../assets/icons/filament-DB.png" alt="Filament-DB" title="Home">
-            </a>
-            <div id="suche" class="center">
-                <input id="text-input" type="text" placeholder="Suche oder token eingeben..">
-                <button id="search-btn"><span class="material-symbols-outlined center">search</span></button>
-            </div>
-            <div id="user" class="center">
-                <div id="user-name">
-                    Hallo <i>Gast</i>
-                </div>
-                <div id="user-profile-img">
-                    <img src="../assets/icons/user.png" title="Gast" alt="Gast">
-                </div>
-            </div>
-        </div>
+    <div id="header"><!--Code injectedd via assets/js/heading.js--></div>
     </div>
     <div id="main">
         <h1>Filament hinzufügen</h2>
-        <form id="add-form">
+        <form id="add-form" method="POST">
             <label for="id">Token:</label>
             <input type="text" id="id" name="id" disabled required><br>
             <label for="vendor">Hersteller:</label>
@@ -56,62 +40,59 @@
             <input type="number" id="weight" name="weight" placeholder="Gewicht der Spule" required><br>
             <label for="owner">Besitzer:</label>
             <input type="text" id="owner" name="owner" placeholder="Besitzer der Spule" required><br>
-            <label for="anzahl">Anzahl Spulen.:</label>
+            <label for="anzahl">Anzahl Spulen:</label>
             <input type="number" id="anzahl" name="anzahl" value="1" required><br>
-            <label for="bed-temmp">Bed-temp.:</label>
-            <input type="number" id="bed-temmp" name="bed-temmp" value="60" required><br>
-            <label for="nozzle-temmp">Nozzle-temp.:</label>
-            <input type="number" id="nozzle-temmp" name="nozzle-temmp" value="220" required><br>
+            <label for="bedtemp">Bed-temp.:</label>
+            <input type="number" id="bedtemp" name="bedtemp" value="60" required><br>
+            <label for="nozzletemp">Nozzle-temp.:</label>
+            <input type="number" id="nozzletemp" name="nozzletemp" value="220" required><br>
             <label for="img">Bild vom Benchy:</label>
-            <input type="image" id="img-upload" name="img" required><br>
+            <input type="image" id="img-upload" name="img"><br>
             <label for="img2">Bild von der Spule:</label>
-            <input type="image" id="img-upload" name="img2" required><br>
-            <label for="additional-info">Zusätzliche Infos:</label>
-            <input type="text" id="additional-info" name="additional-info" placeholder="Tips"><br>
+            <input type="image" id="img-upload" name="img2"><br>
+            <label for="additionalinfo">Zusätzliche Infos:</label>
+            <input type="text" id="additionalinfo" name="additionalinfo" placeholder="Tips"><br>
             <div id="buttons">
                 <button id="savebtn" type="submit">speichern</button>
                 <button id="resetbtn" type="reset">reset</button>
             </div>
         </form>
         <?php
-// Datenbankpfad
-$dbpath = '../assets/db/filaments.sqlite'; // SQLite-Datenbankdatei
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $hersteller = $_POST['vendor'];
+            $farbe = $_POST['color'];
+            $material = $_POST['material'];
+            $dicke = $_POST['diameter'];
+            $price = $_POST['price'];
+            $gewicht = $_POST['weight'];
+            $besitzer = $_POST['owner'];
+            $anzahl = $_POST['anzahl'];
+            $bedtemp = $_POST['bedtemp'];
+            $nozzletemp = $_POST['nozzletemp'];
+            //$benchyImg = $_FILES['img']['name'];
+            //$spoolImg = $_FILES['img2']['name'];
+            $additionalinfo = $_POST['additionalinfo'];
 
-// Überprüfen, ob die Datenbank existiert
-if (!file_exists($dbpath)) {
-    die("Die Datenbankdatei wurde nicht gefunden: $dbpath");
-}
+            // Database connection
+            $conn = new mysqli("localhost", "root", "", "filaments");
 
-// Verbindung zur SQLite-Datenbank herstellen
-$conn = new SQLite3($dbpath);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
 
-// Verbindung überprüfen
-if (!$conn) {
-    die("Verbindung zur SQLite-Datenbank fehlgeschlagen: " . $conn->lastErrorMsg());
-}
+            // Insert data into the database
+            $sql = "INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, additionalinfo) VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$additionalinfo')";
 
-// Nächste ID ermitteln
-$sql = "SELECT MAX(id) AS max_id FROM filaments";
-$result = $conn->query($sql);
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
 
-// Fehler abfangen, falls die Abfrage fehlschlägt
-if (!$result) {
-    die("Fehler bei der Abfrage: " . $conn->lastErrorMsg());
-}
-
-$row = $result->fetchArray(SQLITE3_ASSOC);
-
-if ($row) {
-    $next_id = $row['max_id'] + 1;
-    echo "Nächste ID ist: $next_id";
-} else {
-    echo "Keine Daten vorhanden, starte ID bei 1.";
-    $next_id = 1;
-}
-
-// Verbindung schließen
-$conn->close();
-?>
+            $conn->close();
+        }
+        ?>
     </div>
 </body>
 </html>

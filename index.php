@@ -10,28 +10,10 @@
     <link rel="stylesheet" href="assets/css/root.css">
     <link rel="stylesheet" href="/assets/css/root.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search">
+    <script src="assets/js/heading.js"></script>
 </head>
 <body>
-       
-    <div id="header">
-        <div id="inner-header">
-            <a id="logo" href="#" class="center">
-                <img id="logoimg" src="assets/icons/filament-DB.png" alt="Filament-DB" title="Home">
-            </a>
-            <div id="suche" class="center">
-                <input id="text-input" type="text" placeholder="Suche oder token eingeben..">
-                <button id="search-btn"><span class="material-symbols-outlined center">search</span></button>
-            </div>
-            <div id="user" class="center">
-                <div id="user-name">
-                    Hallo <i>Gast</i>
-                </div>
-                <div id="user-profile-img">
-                    <img src="assets/icons/user.png" title="Gast" alt="Gast">
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="header"><!--Code injectedd via assets/js/heading.js--></div>
     <div id="main">
         <a href="pages/add.php" style="color:red">zum Hinzufügen</a><br><br>
         <span class="PHP-Check">Let's see, if this works!</span><br>
