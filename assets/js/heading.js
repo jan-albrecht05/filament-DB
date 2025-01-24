@@ -18,13 +18,13 @@ function heading(){
     //if homepage is true
     if (homepage){
         //leaves the logo-link empty
-        heading = '<div id="inner-header"><a id="logo" href="#" class="center"><img id="logoimg" src="assets/icons/filament-DB.png" alt="Filament-DB" title="Home"></a><div id="suche" class="center"><input id="text-input" type="text" placeholder="Suche oder token eingeben.."><button id="search-btn"><span class="material-symbols-outlined center">search</span></button></div><div id="user" class="center"><div id="user-name">Hallo <i>Gast</i></div><div id="user-profile-img"><img src="assets/icons/user.png" title="Gast" alt="Gast"></div></div></div>';
+        heading = '<div id="inner-header"><a id="logo" href="#" class="center"><img id="logoimg" src="assets/icons/filament-DB.png" alt="Filament-DB" title="Home"></a><div id="suche" class="center"><form action="pages/search.php" method="GET"><input id="text-input" type="text" name="query" placeholder="Suche oder token eingeben.."><button id="search-btn" type="submit"><span class="material-symbols-outlined center">search</span></button></form></div><div id="user" class="center"><div id="user-name">Hallo <i>Gast</i></div><div id="user-profile-img"><img src="assets/icons/user.png" title="Gast" alt="Gast"></div></div></div>';
         document.getElementById("header").innerHTML = heading;
     }
     else{
         //if homepage is false
         //fills the logo-link with the href to the homepage
-        heading = '<div id="inner-header"><a id="logo" href="../index.php" class="center"><img id="logoimg" src="../assets/icons/filament-DB.png" alt="Filament-DB" title="Home"></a><div id="suche" class="center"><input id="text-input" type="text" placeholder="Suche oder token eingeben.."><button id="search-btn"><span class="material-symbols-outlined center">search</span></button></div><div id="user" class="center"><div id="user-name">Hallo <i>Gast</i></div><div id="user-profile-img"><img src="../assets/icons/user.png" title="Gast" alt="Gast"></div></div></div>';
+        heading = '<div id="inner-header"><a id="logo" href="../index.php" class="center"><img id="logoimg" src="../assets/icons/filament-DB.png" alt="Filament-DB" title="Home"></a><div id="suche" class="center"><form action="pages/search.php" method="GET"><input id="text-input" type="text" name="query" placeholder="Suche oder token eingeben.."><button id="search-btn" type="submit"><span class="material-symbols-outlined center">search</span></button></form></div><div id="user" class="center"><div id="user-name">Hallo <i>Gast</i></div><div id="user-profile-img"><img src="../assets/icons/user.png" title="Gast" alt="Gast"></div></div></div>';
         document.getElementById("header").innerHTML = heading;
     }
 }
