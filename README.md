@@ -26,6 +26,7 @@ Apache Webserver: db.vault.homburgschule.de ?
     - Additional Info
     - active: true/false
 - [x] Page for adding content
+- [x] Search Page "?query="
 →   <u> [ ] connecting to DB</u>
 - [ ] Filament-page:
     - Anzeige der DB-Daten
