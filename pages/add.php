@@ -74,7 +74,7 @@
             //$benchyImg = $_FILES['img']['name'];
             //$spoolImg = $_FILES['img2']['name'];
             $additionalinfo = $_POST['additionalinfo'];
-
+            
             // Database connection
             $conn = new mysqli("localhost", "root", "", "filaments");
 
@@ -84,7 +84,7 @@
             }
 
             // Insert data into the database
-            $sql = "INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, additionalinfo) VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$additionalinfo')";
+            $sql = "INSERT INTO `filaments`.`filament` (`hersteller`, `farbe`, `material`, `dicke`, `price`, `gewicht`, `besitzer`, `anzahl`, `bedtemp`, `nozzletemp`, `additionalinfo`) VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$additionalinfo')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
