@@ -136,6 +136,12 @@ img{
     background-color: var(--bg-color);
     filter: drop-shadow(5px 5px 5px var(--shadow));
 }
+#user-settings input[type="color"]{
+    padding:0;
+}
+#color-input-heading{
+    font-size: 120%;
+}
 #login-button-div{
     width: 100%;
     height: 100%;
@@ -190,6 +196,21 @@ img{
 #add-form #diameter-radio{
     display: flex;
 }
+#add-form input{
+    outline: none;
+    margin-bottom: .5rem;
+    background-color: var(--bg-highlight-color);
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    color: var(--font-color);
+    font-size: 110%;
+    width: 50%;
+    padding: .2rem .5rem;
+}
+#add-form input[type="color"]{
+    width: 5%;
+    padding:0
+}
 #add-form #diameter-input #diameter1{
     width: 40%;
 }
@@ -207,6 +228,7 @@ img{
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all .2s;
+    outline: none;
 }
 #add-form #buttons #savebtn{
     background-color: var(--user-main-color);
@@ -287,5 +309,11 @@ img{
     }
     #add-form #diameter-input #diameter1{
         width: 70%;
+    }
+    #add-form #buttons button{
+        width: 45%;
+    }
+    #resetbtn{
+        margin-left: -1rem;
     }
 }
