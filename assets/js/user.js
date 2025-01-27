@@ -1,3 +1,5 @@
+//everything realted to the user preferences saved in the local storage
+
 let usersettigsopen = false;
 
 // Function to handle user settings toggle
@@ -7,7 +9,7 @@ function usersettings() {
         usersettigsopen = !usersettigsopen;
         userSettingsElement.style.transform = usersettigsopen
             ? "translateY(0rem)"
-            : "translateY(-8rem)";
+            : "translateY(-10rem)";
     }
 }
 
@@ -28,7 +30,7 @@ document.addEventListener("click", (event) => {
 
     // Otherwise, close the user settings
     usersettigsopen = false;
-    userSettingsElement.style.transform = "translateY(-8rem)";
+    userSettingsElement.style.transform = "translateY(-10rem)";
 });
 
 // Function to add event listener to the #user element
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //Add content to the user settings
 function addContent() {
     const userElement = document.getElementById("user-settings");
-    userElement.innerHTML = "<input type='color' id='color-picker' value='#da00bd' onchange='changeColor()'>";
+    userElement.innerHTML = "<span id='color-input-heading'>Prev. Color: </span><input type='color' id='color-picker' value='#da00bd' onchange='changeColor()'><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
 }
 //Let's user set a preferred color
 function changeColor() {
@@ -78,6 +80,9 @@ function checkColor(){
     let color = localStorage.getItem('user-main-color');
     if (color) {
         document.documentElement.style.setProperty('--user-main-color', color);
-        document.getElementById("user-settings").innerHTML = "<input type='color' id='color-picker' value='" + color + "' onchange='changeColor()'>";
+        document.getElementById("user-settings").innerHTML = "<span id='color-input-heading'>Prev. Color: </span><input type='color' id='color-picker' value='" + color + "' onchange='changeColor()'><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
     }
 }
+function login() {
+    window.location.href = "pages/login.html";
+};
