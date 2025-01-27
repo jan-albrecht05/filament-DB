@@ -1,4 +1,5 @@
 let homepage = false;
+window.onload = heading;
 
 //checks the current path
 //if page is index.php => homepage = true
@@ -14,7 +15,6 @@ function linkcheck(){
 function heading(){
     let heading = ""
     linkcheck();
-
     //if homepage is true
     if (homepage){
         //leaves the logo-link empty
@@ -28,4 +28,3 @@ function heading(){
         document.getElementById("header").innerHTML = heading;
     }
 }
-window.onload = heading;

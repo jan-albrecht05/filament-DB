@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../assets/css/root.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search">
     <script src="../assets/js/heading.js"></script>
+    <script src="..//assets/js/user.js" defer></script>
 </head>
 <body>
     <div id="header"><!--Code injectedd via assets/js/heading.js--></div>
+    <div id="user-settings"><!--Code injected via assets/js/user.js--></div>
     </div>
     <div id="main">
         <h1>Filament hinzufügen</h2>
