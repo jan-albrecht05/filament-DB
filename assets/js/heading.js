@@ -28,3 +28,11 @@ function heading(){
         document.getElementById("header").innerHTML = heading;
     }
 }
+function login() {
+    if (homepage){
+        window.location.href = "pages/login.html";
+    }
+    else{
+        window.location.href = "../pages/login.html";
+    }
+};
