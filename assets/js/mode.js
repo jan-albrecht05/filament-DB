@@ -10,6 +10,6 @@ function listmode(){
     document.getElementById("gridbtn").classList.remove("active");
     localStorage.setItem("mode", "list");
 }
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
 });

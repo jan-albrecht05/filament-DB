@@ -72,7 +72,7 @@ img{
 }
 #suche button{
     background-color: var(--bg-highlight-color);
-    margin-left: -5rem;
+    margin-left: -4.8rem;
     height: calc(50% + .4rem);
     width: 5rem;
     font-size: 200%;
@@ -186,8 +186,8 @@ img{
 #controls #addbtn{
     min-width: 10%;
     height: 2.5rem;
-    background-color: var(--bg-highlight2-color);
-    border: 2px solid var(--font-color);
+    background-color: var(--bg-highlight-color);
+    border: 2px solid var(--bg-highlight2-color);
     border-radius: 5px;
     color: var(--font-color);
     font-size: 110%;
@@ -198,17 +198,19 @@ img{
 }
 #controls #addbtn:hover{
     filter: drop-shadow(0px 5px 5px var(--shadow));
+    background-color: var(--bg-highlight2-color);
 }
 #toggleswitch{
     display: flex;
     justify-content: end;
     min-width: 20%;
+    transition: all .2s;
 }
 #toggleswitch button{
     min-width: 15%;
     height: 2.5rem;
     background-color: var(--bg-color);
-    border: 2px solid var(--font-color);
+    border: 2px solid var(--bg-highlight2-color);
     color: var(--font-color);
     font-size: 110%;
     text-transform: uppercase;
@@ -216,22 +218,32 @@ img{
     transition: all .2s;
     outline: none;
     padding-right: .6rem;
+    border-radius: 0px 5px 5px 0px;
 }
-button .active{
+#toggleswitch button span{
+    color: var(--bg-highlight2-color);
+}
+#toggleswitch:hover{
+    filter: drop-shadow(0px 5px 5px var(--shadow));
+}
+#toggleswitch button.active{
     background-color: var(--bg-highlight-color) !important;
     color: var(--font-color);
 }
+#toggleswitch button.active span{
+    color: var(--font-color);
+}
 #listbtn{
-    border-radius: 5px 0px 0px 5px;
+    transform: rotateY(180deg);
 }
 #gridbtn{
+    margin-left: -1px;
     border-left: 0px;
-    border-radius: 0px 5px 5px 0px;
 }
 
 /*Filament*/
 .filament{
-    transition: alll .3s;
+    transition: all .3s;
 }
 
 /*Add Form*/
@@ -297,14 +309,19 @@ button .active{
 }
 
 @media (max-width:1100px) {
-    header a{
-        min-width: 40%;
+    #header a{
+        min-width: 20%;
     }
     #add-form label{
         width: 30%;
     }
     #add-form #diameter-input #diameter1{
         width: 100%;
+    }
+}
+@media (max-width:800px) {
+    #header a{
+        min-width: 25%;
     }
 }
 @media (max-width:600px) {

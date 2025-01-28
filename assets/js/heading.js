@@ -21,18 +21,20 @@ function heading(){
         //leaves the logo-link empty
         logolink = "#";
         imglink = "";
+        suche = "";
     }
     else{
         //if homepage is false
         //fills the logo-link with the href to the homepage
-        logolink = "..index.php";
+        logolink = "../index.php";
         imglink = "../";
+        suche = "../";
         userimglink = "../";
     }
     heading = '<div id="inner-header"><a id="logo" href="'+
                 logolink+'"class="center"><img id="logoimg" src="'+
                 imglink+'assets/icons/filament-DB.png" alt="Filament-DB" title="Home"></a><div id="suche" class="center">'+
-                '<form action="pages/search.php" method="GET">'+
+                '<form action="'+suche+'pages/search.php" method="GET">'+
                     '<input id="text-input" type="text" name="query" placeholder="Suche oder token eingeben..">'+
                     '<button id="search-btn" type="submit"><span class="material-symbols-outlined center">search</span></button>'+
                 '</form></div><div id="user" class="center">'+
