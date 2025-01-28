@@ -1,8 +1,8 @@
 # filament-DB
 ## for all of our 3D-printing-filament
-If you're a better programmer with PHP than I am, (a total noob) please help me with this project!
-<img src="/assets/img/overview.png" alt="">
 # Feel free to contribute!
+<img src="/assets/img/overview.png" alt="">
+If you're a better programmer with PHP than I am, (a total noob) please help me with this project!
 
 ## To-Do:
 - [ ] Homepage:
