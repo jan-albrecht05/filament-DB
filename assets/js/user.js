@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addUserEventListener();
     addContent();
     checkColor();
+    localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
 });
 
 //Add content to the user settings

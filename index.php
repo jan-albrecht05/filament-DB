@@ -45,6 +45,11 @@
                 </div>
             </div>
         <div id="filament-output">
+    	<!--
+        A lot of content is added manually to show the looks.
+        Can be deleted anytime
+        -->
+            <!--PHP: Filament-Output-->
             <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
                 <div class="img">
                     <!--Bild wird noch via CSS als Backgroud-image eingefügt-->

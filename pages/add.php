@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>filament DB - Hinzufügen</title>
+    <title>Add Filament</title>
     <link rel="icon" href="../assets/icons/web-icon.png">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/root.css">
@@ -17,13 +17,13 @@
     </div>
     <div id="main">
         <h1>Filament hinzufügen</h2>
-        <form id="add-form" method="POST">
+        <form id="add-form" method="POST" enctype="multipart/form-data">
             <label for="id">Token:</label>
             <input type="text" id="id" name="id" disabled required><br>
             <label for="vendor">Hersteller:</label>
             <input type="text" id="vendor" name="vendor" required><br>
             <label for="color">Farbe:</label>
-            <input type="color" id="color" name="color" value="#ff0000" required><br>
+            <input type="text" id="color" name="color" required><br>
             <label for="material">Material:</label>
             <input type="text" id="material" name="material" placeholder="PLA" required><br>
             <div id="diameter-input">
@@ -49,9 +49,9 @@
             <label for="nozzletemp">Nozzle-temp.:</label>
             <input type="number" id="nozzletemp" name="nozzletemp" value="220" required><br>
             <label for="img">Bild vom Benchy:</label>
-            <input type="image" id="img-upload" name="img"><br>
+            <input type="file" id="img" name="img"><br>
             <label for="img2">Bild von der Spule:</label>
-            <input type="image" id="img-upload" name="img2"><br>
+            <input type="file" id="img2" name="img2"><br>
             <label for="additionalinfo">Zusätzliche Infos:</label>
             <input type="text" id="additionalinfo" name="additionalinfo" placeholder="Tips"><br>
             <div id="buttons">
@@ -71,10 +71,12 @@
             $anzahl = $_POST['anzahl'];
             $bedtemp = $_POST['bedtemp'];
             $nozzletemp = $_POST['nozzletemp'];
+            $additionalinfo = $_POST['additionalinfo'];
+
+            // Handle file uploads
             //$benchyImg = $_FILES['img']['name'];
             //$spoolImg = $_FILES['img2']['name'];
-            $additionalinfo = $_POST['additionalinfo'];
-            
+
             // Database connection
             $conn = new mysqli("localhost", "root", "", "filaments");
 
@@ -84,7 +86,8 @@
             }
 
             // Insert data into the database
-            $sql = "INSERT INTO `filaments`.`filament` (`hersteller`, `farbe`, `material`, `dicke`, `price`, `gewicht`, `besitzer`, `anzahl`, `bedtemp`, `nozzletemp`, `additionalinfo`) VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$additionalinfo')";
+            $sql = "INSERT INTO filaments (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, benchyImg, spoolImg, additionalinfo) 
+                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$benchyImg', '$spoolImg', '$additionalinfo')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
