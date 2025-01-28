@@ -178,6 +178,56 @@ img{
     margin-inline: auto;
     width: 80%;
 }
+#controls{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+#controls #addbtn{
+    width: 10%;
+    height: 2.5rem;
+    background-color: var(--bg-highlight2-color);
+    border: 2px solid var(--font-color);
+    border-radius: 5px;
+    color: var(--font-color);
+    font-size: 110%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .2s;
+    outline: none;
+}
+#controls #addbtn:hover{
+    filter: drop-shadow(0px 5px 5px var(--shadow));
+}
+#toggleswitch{
+    display: flex;
+    justify-content: end;
+    width: 20%;
+}
+#toggleswitch button{
+    width: 15%;
+    height: 2.5rem;
+    background-color: var(--bg-color);
+    border: 2px solid var(--font-color);
+    color: var(--font-color);
+    font-size: 110%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .2s;
+    outline: none;
+    padding-right: .6rem;
+}
+button .active{
+    background-color: var(--bg-highlight-color) !important;
+    color: var(--font-color);
+}
+#listbtn{
+    border-radius: 5px 0px 0px 5px;
+}
+#gridbtn{
+    border-left: 0px;
+    border-radius: 0px 5px 5px 0px;
+}
 
 /*Add Form*/
 #add-form{
