@@ -24,71 +24,457 @@
             </div>
         </div>
         <div id="modecss" hidden><!--CSS for filemant-view gets inserted here via /assets/js/mode.js--></div>
+        <div class="filament" id="filamentheading">
+            <div class="img center">Bild</div>
+            <div class="box">
+                <div class="row">
+                    <div class="hersteller">Hersteller</div>
+                    <div class="material">Material</div>
+                    <div class="farbe">Farbe</div>
+                    <div class="durchmesser">Durchmesser</div>
+                </div>
+                <div class="row">
+                    <div class="preis">Preis</div>
+                    <div class="gewicht">Gewicht</div>
+                    <div class="besitzer">Besitzer</div>
+                    <div class="anzahl">Anzahl</div>
+                    <div class="bedtemp center">Bedtemp.</div>
+                    <div class="nozzletemp center">Nozzletemp.</div>
+                    <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
         <div id="filament-output">
             <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
                 <div class="img">
                     <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
                     <!--PHP: Img vom Benchy in der--></div>
-                <div class="row">
-                    <div class="hersteller">Ultimaker<!--PHP: Hersteller--></div>
-                    <div class="material">PLA <!--PHP: Material--></div>
-                    <div class="farbe">#ff0000
-                        <!--PHP: Farbe-->
-                        <!--maybe possible to change color to Text?--></div>
-                    <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
-                </div>
-                <div class="row">
-                    <div class="preis">17€<!--PHP: Preis--></div>
-                    <div class="gewicht">750g<!--PHP: Gewicht--></div>
-                    <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
-                    <div class="anzahl">1<!--PHP: Anzahl--></div>
-                    <div class="bedtemp">60°C<!--PHP: Bedtemp--></div>
-                    <div class="nozzletemp">220°C<!--PHP: Nozzletemp--></div>
-                    <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">Ultimaker<!--PHP: Hersteller--></div>
+                        <div class="material">PLA <!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>60°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>220°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
                 </div>
             </div>
-            <div class="filament" id="0002"><!--ID wird mit PHP token eingefügt-->
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
                 <div class="img">
                     <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
                     <!--PHP: Img vom Benchy in der--></div>
-                <div class="row">
-                    <div class="hersteller">3DJake<!--PHP: Hersteller--></div>
-                    <div class="material">PETG<!--PHP: Material--></div>
-                    <div class="farbe">#16874d
-                        <!--PHP: Farbe-->
-                        <!--maybe possible to change color to Text?--></div>
-                    <div class="durchmesser">2.85mm<!--PHP: Durchmesser--> </div>
-                </div>
-                <div class="row">
-                    <div class="preis">21€<!--PHP: Preis--></div>
-                    <div class="gewicht">1000g<!--PHP: Gewicht--></div>
-                    <div class="besitzer">Jan<!--PHP: Besitzer--></div>
-                    <div class="anzahl">1<!--PHP: Anzahl--></div>
-                    <div class="bedtemp">80°C<!--PHP: Bedtemp--></div>
-                    <div class="nozzletemp">250°C<!--PHP: Nozzletemp--></div>
-                    <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
                 </div>
             </div>
-            <div class="filament" id="0003"><!--ID wird mit PHP token eingefügt-->
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
                 <div class="img">
                     <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
                     <!--PHP: Img vom Benchy in der--></div>
-                <div class="row">
-                    <div class="hersteller">Ultimaker<!--PHP: Hersteller--></div>
-                    <div class="material">PLA <!--PHP: Material--></div>
-                    <div class="farbe">#ff0000
-                        <!--PHP: Farbe-->
-                        <!--maybe possible to change color to Text?--></div>
-                    <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="preis">17€<!--PHP: Preis--></div>
-                    <div class="gewicht">750g<!--PHP: Gewicht--></div>
-                    <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
-                    <div class="anzahl">1<!--PHP: Anzahl--></div>
-                    <div class="bedtemp">60°C<!--PHP: Bedtemp--></div>
-                    <div class="nozzletemp">220°C<!--PHP: Nozzletemp--></div>
-                    <div class="additionalinfo"><!--PHP: Additional Info--></div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">Ultimaker<!--PHP: Hersteller--></div>
+                        <div class="material">PLA <!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>60°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>220°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filament" id="0001"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="box">
+                    <div class="row">
+                        <div class="hersteller">3D Jake<!--PHP: Hersteller--></div>
+                        <div class="material">PETG<!--PHP: Material--></div>
+                        <div class="farbe">#ff0000
+                            <!--PHP: Farbe-->
+                            <!--maybe possible to change color to Text?--></div>
+                        <div class="durchmesser">1.75mm<!--PHP: Durchmesser--> </div>
+                    </div>
+                    <div class="row">
+                        <div class="preis">17€<!--PHP: Preis--></div>
+                        <div class="gewicht">750g<!--PHP: Gewicht--></div>
+                        <div class="besitzer">Homburgschule<!--PHP: Besitzer--></div>
+                        <div class="anzahl">1<!--PHP: Anzahl--></div>
+                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>80°C<!--PHP: Bedtemp--></div>
+                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>250°C<!--PHP: Nozzletemp--></div>
+                        <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                    </div>
                 </div>
             </div>
         </div>

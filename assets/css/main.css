@@ -240,6 +240,9 @@ img{
     margin-left: -1px;
     border-left: 0px;
 }
+#filament-output{
+    margin-bottom: 2rem;
+}
 
 /*Filament*/
 .filament{
@@ -372,7 +375,7 @@ img{
     }
     /*Main*/
     #main{
-        width: 90%;
+        width: 95%;
     }
 
     /*Add Form*/

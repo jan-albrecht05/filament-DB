@@ -1,0 +1,83 @@
+#filamentheading{
+    display:none;
+}
+
+#filament-output{
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+.filament{
+    width: 100%;
+    border: 1px solid var(--bg-highlight2-color);
+    border-radius: 10px;
+    padding: .5rem;
+}
+.filament .img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background-image: url('../icons/no-benchy.png');
+    background-size: cover;
+    background-color: var(--bg-highlight-color);
+    margin-bottom: .5rem;
+    transition: all .3s;
+}
+.filament:hover .img{
+    background-image: url('../icons/no-spool.png');
+}
+.filament .hersteller{
+    font-size: 160%;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+.filament .row .material{
+    font-size: 130%;
+    margin-right: .5rem;
+}
+.filament .row .farbe,
+.filament .row .durchmesser,
+.filament .row .gewicht,
+.filament .row .preis,
+.filament .row .anzahl,
+.filament .row .besitzer{
+    display: none;
+}
+.filament .row:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.filament .bedtemp,
+.filament .nozzletemp{
+    color: var(--bg-highlight2-color);
+}
+.filament .material-symbols-outlined{
+    border-bottom: 2px solid var(--bg-highlight2-color);
+    margin-right: .5rem;
+    font-size: 100%;
+}
+@media (max-width:1300px){
+    #filament-output{
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: auto;
+    }    
+    .filament{
+        width: 95%;
+    }
+}
+@media (max-width:900px){
+    #filament-output{
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }    
+    .filament{
+        width: 85%;
+    }
+}
+@media (max-width:600px){
+    #filament-output{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}

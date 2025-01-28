@@ -1,27 +1,120 @@
+#filamentheading{
+    font-weight: bold;
+    font-size: 120%;
+    border-bottom-width: 2px;
+    height: 2rem;
+    position: sticky;
+    top: 0;
+    filter: drop-shadow(0px 5px 5px var(--shadow));
+}
+#filamentheading:hover{
+    background-color: var(--bg-color);
+}
+#filamentheading .img{
+    background-image: none;
+    background-color: transparent;
+}
 .filament{
     display: flex;
     justify-content: space-between;
     padding: .5rem 0rem;
+    background-color: var(--bg-color);
     border-bottom: 1px solid var(--bg-highlight-color);
+    transition: all .3s;
 }
 .filament:nth-last-child(1){
     border-bottom: none;
 }
-.img{
-    width: 10%;
+.filament:hover{
+    background-color: var(--bg-highlight-color);
 }
-.row{
+.img{
+    width: 5%;
+    aspect-ratio: 1/1;
+    background-image: url('../icons/no-benchy.png');
+    background-size: cover;
+    background-color: var(--bg-highlight-color);
+}
+.box{
+    width: 92%;
+    display: flex;
+    align-items: center;
+}
+.box .row:nth-child(1){
+    width: 45%;
+    margin-right: 2rem;
+}
+.box .row{
     display: flex;
     justify-content: space-between;
-    width: 45%;
+    width: 50%;
 }
-.row div{
+.box .row div{
     text-align: left;
     width: 10%;
 }
-.row .durchmesser{
+.box .row .durchmesser{
     margin-right: 10%;
 }
-.row .besitzer{
+.box .row .besitzer{
     width:19%
+}
+.filament .material-symbols-outlined{
+    border-bottom: 2px solid var(--font-color);
+    margin-right: .5rem;
+    font-size: 100%;
+}
+.additionalinfo{
+    display: none;
+}
+
+@media (max-width:1600px){
+    #filamentheading{
+        display: none;
+    }
+}
+@media (max-width:1300px){
+    .box{
+        display: block;
+    }
+}
+@media (max-width:1300px){
+    .img{
+        width: 15%;
+    }
+    .box{
+        width: 80%;
+        margin-left: 5%;
+    }
+    .box .row{
+        width: 80%;
+    }
+    .hersteller{
+        font-size: 130%;
+        white-space: nowrap;
+        align-items: baseline;
+        display: flex;
+    }
+    .box .row:nth-child(1){
+        display: flex;
+        align-items: baseline;
+    }
+    .box .row:nth-child(1) .hersteller,
+    .box .row:nth-child(1) .material{
+        width: 100%;
+        margin-right: 1rem;
+    }
+    .box .row:nth-child(2){
+        color: var(--bg-highlight2-color);
+        margin-top: .5rem;
+    }
+    .box .row:nth-child(2) .preis{
+        margin-right: -2rem;
+    }
+    .farbe,.rpeis,.anzahl,.besitzer{
+        display: none;
+    }
+    .filament .material-symbols-outlined{
+        border-bottom: 2px solid var(--bg-highlight2-color);
+    }
 }
