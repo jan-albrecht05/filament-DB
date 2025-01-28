@@ -30,9 +30,9 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - Additional Info
     - active: true/false
 - [x] Page for adding content
-    -[ ] CSS for Input-Fields needs a bit more work
+    - [ ] CSS for Input-Fields needs a bit more work
 - [x] Search Page "?query="
-→   <u> [ ] connecting to DB</u>
+   - [ ] connecting to DB
 - [ ] Filament-page:
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
