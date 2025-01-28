@@ -47,6 +47,28 @@
                     <div class="additionalinfo"><!--PHP: Additional Info--></div>
                 </div>
             </div>
+            <div class="filament" id="0002"><!--ID wird mit PHP token eingefügt-->
+                <div class="img">
+                    <!--Bild wird noch via CSS als Backgroud-image eingefügt-->
+                    <!--PHP: Img vom Benchy in der--></div>
+                <div class="row">
+                    <div class="hersteller">3DJake<!--PHP: Hersteller--></div>
+                    <div class="material">PETG<!--PHP: Material--></div>
+                    <div class="farbe">#16874d
+                        <!--PHP: Farbe-->
+                        <!--maybe possible to change color to Text?--></div>
+                    <div class="durchmesser">2.85mm<!--PHP: Durchmesser--> </div>
+                </div>
+                <div class="row">
+                    <div class="preis">21€<!--PHP: Preis--></div>
+                    <div class="gewicht">1000g<!--PHP: Gewicht--></div>
+                    <div class="besitzer">Jan<!--PHP: Besitzer--></div>
+                    <div class="anzahl">1<!--PHP: Anzahl--></div>
+                    <div class="bedtemp">80°C<!--PHP: Bedtemp--></div>
+                    <div class="nozzletemp">250°C<!--PHP: Nozzletemp--></div>
+                    <div class="additionalinfo"><!--PHP: Additional Info--></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

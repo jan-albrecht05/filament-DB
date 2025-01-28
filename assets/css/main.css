@@ -33,7 +33,7 @@ img{
 #header a{
     margin-left: 5%;
     height: 6rem;
-    width: 15%;
+    min-width: 15%;
     margin-right: 5%;
     transition: all .2s;
     background-color: var(--user-main-color);
@@ -184,7 +184,7 @@ img{
     margin-bottom: 2rem;
 }
 #controls #addbtn{
-    width: 10%;
+    min-width: 10%;
     height: 2.5rem;
     background-color: var(--bg-highlight2-color);
     border: 2px solid var(--font-color);
@@ -202,10 +202,10 @@ img{
 #toggleswitch{
     display: flex;
     justify-content: end;
-    width: 20%;
+    min-width: 20%;
 }
 #toggleswitch button{
-    width: 15%;
+    min-width: 15%;
     height: 2.5rem;
     background-color: var(--bg-color);
     border: 2px solid var(--font-color);
@@ -227,6 +227,11 @@ button .active{
 #gridbtn{
     border-left: 0px;
     border-radius: 0px 5px 5px 0px;
+}
+
+/*Filament*/
+.filament{
+    transition: alll .3s;
 }
 
 /*Add Form*/
@@ -292,6 +297,9 @@ button .active{
 }
 
 @media (max-width:1100px) {
+    header a{
+        min-width: 40%;
+    }
     #add-form label{
         width: 30%;
     }

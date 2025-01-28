@@ -1,0 +1,27 @@
+.filament{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0rem;
+    border-bottom: 1px solid var(--bg-highlight-color);
+}
+.filament:nth-last-child(1){
+    border-bottom: none;
+}
+.img{
+    width: 10%;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+.row div{
+    text-align: left;
+    width: 10%;
+}
+.row .durchmesser{
+    margin-right: 10%;
+}
+.row .besitzer{
+    width:19%
+}
