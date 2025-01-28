@@ -23,7 +23,7 @@
                 <button id="gridbtn" class="togglebtn center" onclick="gridmode()"><span class="material-symbols-outlined">view_cozy</span></button>
             </div>
         </div>
-        <div id="modecss" hidden><!--CSS for filemant-view gets inserted here via /assets/js/mode.js--></div>
+        <div id="modecss" hidden><!--CSS for Filament-view gets inserted here via /assets/js/mode.js--></div>
         <div class="filament" id="filamentheading">
             <div class="img center">Bild</div>
             <div class="box">
