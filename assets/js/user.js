@@ -81,6 +81,6 @@ function checkColor(){
     let color = localStorage.getItem('user-main-color');
     if (color) {
         document.documentElement.style.setProperty('--user-main-color', color);
-        document.getElementById("user-settings").innerHTML = "<span id='color-input-heading'>Prev. Color: </span><input type='color' id='color-picker' value='" + color + "' onchange='changeColor()'><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
+        document.getElementById("user-settings").innerHTML = "<span id='color-input-heading'>Pref. Color: </span><input type='color' id='color-picker' value='" + color + "' onchange='changeColor()'><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
     }
 }
