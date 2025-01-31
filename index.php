@@ -12,6 +12,13 @@
     <script src="assets/js/user.js" defer></script>
     <script src="assets/js/footer.js" defer></script>
     <script src="assets/js/mode.js" defer></script>
+    <style>
+        @media (min-height:500px) {
+            #footer{
+                position: absolute;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header"><!--Code injected via assets/js/heading.js--></div>
