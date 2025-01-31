@@ -57,6 +57,9 @@
     margin-right: .5rem;
     font-size: 100%;
 }
+#addfilamentbtn{
+    margin-left: 37.5vw !important;
+}
 @media (max-width:1300px){
     #filament-output{
         grid-template-columns: repeat(4, 1fr);
@@ -79,5 +82,8 @@
     #filament-output{
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
+    }
+    #addfilamentbtn{
+        margin-left: 30vw !important;
     }
 }

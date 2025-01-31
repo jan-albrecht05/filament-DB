@@ -244,6 +244,24 @@ img{
 #filament-output{
     margin-bottom: 2rem;
 }
+#addfilamentbtn{
+    width: 8rem;
+    aspect-ratio: 1/1;
+    background-color: var(--blk);
+    color: var(--font-color);
+    margin-inline: auto;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    font-size: 700%;
+    border-radius: 50%;
+    color: var(--bg-highlight2-color);
+    transition: all .2s;
+    text-decoration: none;
+}
+#addfilamentbtn:hover{
+    background-color: var(--bg-highlight-color);
+    filter: drop-shadow(0px 0px 5px var(--shadow));
+}
 
 /*Filament*/
 .filament{
@@ -280,6 +298,8 @@ img{
 }
 #add-form input:disabled{
     background-color: var(--bg-color);
+    color: var(--blk);
+    user-select: none;
 }
 #add-form input:focus{
     border-color: var(--user-main-color);

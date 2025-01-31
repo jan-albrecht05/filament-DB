@@ -59,6 +59,7 @@
     aspect-ratio: 1/1;
     border-radius: 50%;
     margin-right: .5rem;
+    border:1px solid var(--bg-highlight2-color);
 }
 .box .row .durchmesser{
     margin-right: 10%;

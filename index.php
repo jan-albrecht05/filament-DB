@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>filament DB</title>
+    <title>Filament DB</title>
     <link rel="icon" href="assets/icons/web-icon.png">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/root.css">
@@ -14,7 +14,7 @@
     <script src="assets/js/mode.js" defer></script>
 </head>
 <body>
-    <div id="header"><!--Code injectedd via assets/js/heading.js--></div>
+    <div id="header"><!--Code injected via assets/js/heading.js--></div>
     <div id="user-settings"><!--Code injected via assets/js/user.js--></div>
     <div id="main">
         <div id="controls">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         <div id="filament-output">
-    	<!--PHP: Filament-Output--> 
+            <!--PHP: Filament-Output--> 
             <?php
                 // Open the sqlite3 database file only if it already exists
                 if(file_exists("assets/db/ff.db")){
@@ -57,8 +57,10 @@
 
                     // Check if there are any rows returned
                     if ($result) {
+                        $hasRows = false;
                         while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-                            echo'
+                            $hasRows = true;
+                            echo '
                             <div class="filament" id="'.$row['id'].'">
                                 <div class="img"></div>
                                 <div class="box">
@@ -79,7 +81,12 @@
                                 </div>    
                             </div>';
                         }
+                        if (!$hasRows) {
+                            echo "<a href='pages/add.php' class='center' id='addfilamentbtn' title='Filament Hinzufügen'>+</a>";
+                        }
                     }
+                } else {
+                    echo "<a href='pages/add.php' class='center' id='addfilamentbtn' title='Filament Hinzufügen'>+</a>";
                 }
             ?>
         </div>
