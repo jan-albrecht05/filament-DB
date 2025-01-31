@@ -31,7 +31,7 @@
             <label for="vendor">Hersteller:</label>
             <input type="text" id="vendor" name="vendor" required><br>
             <label for="color">Farbe:</label>
-            <input type="color" id="color" name="color" value="red" required><br>
+            <input type="color" id="color" name="color" value="#ff0000" required><br>
             <label for="material">Material:</label>
             <input type="text" id="material" name="material" placeholder="PLA" required><br>
             <div id="diameter-input">
