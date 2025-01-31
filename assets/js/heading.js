@@ -1,6 +1,8 @@
 let homepage = false;
 let logolink, userimglink = "";
-window.onload = heading;
+window.addEventListener("load", () =>{
+    heading();
+});
 
 //checks the current path
 //if page is index.php => homepage = true
@@ -41,6 +43,7 @@ function heading(){
                 '<div id="user-name">Hallo <i>Gast</i></div><div id="user-profile-img"><img src="'+
                 userimglink+'assets/icons/user.png" title="Gast" alt="Gast"></div></div></div>';
     document.getElementById("header").innerHTML = heading;
+
 }
 function login() {
     if (homepage){

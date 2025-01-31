@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
     <script src="../assets/js/heading.js"></script>
     <script src="../assets/js/user.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
+    <style>
+        @media (min-height:918px) {
+            #footer{
+                position: absolute;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header"><!--Code injectedd via assets/js/heading.js--></div>
@@ -19,7 +27,7 @@
         <h1>Filament hinzufügen</h2>
         <form id="add-form" method="POST" enctype="multipart/form-data">
             <label for="id">Token:</label>
-            <input type="text" id="id" name="id" disabled required><br>
+            <input type="text" id="id" name="id" disabled title="nicht änderbar"><br>
             <label for="vendor">Hersteller:</label>
             <input type="text" id="vendor" name="vendor" required><br>
             <label for="color">Farbe:</label>
@@ -100,4 +108,9 @@
         ?>
     </div>
 </body>
+<footer id="footer" class="center">
+    <div id="footer-content">
+        <!--code gets injected by header.js-->
+    </div>
+</footer>
 </html>

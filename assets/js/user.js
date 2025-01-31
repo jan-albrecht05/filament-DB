@@ -2,6 +2,17 @@
 
 let usersettigsopen = false;
 
+
+// Initial call in case the element is already present
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
+    addUserEventListener();
+    addContent();
+    checkColor();
+    footer();
+    localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
+});
+
 // Function to handle user settings toggle
 function usersettings() {
     const userSettingsElement = document.getElementById("user-settings");
@@ -55,15 +66,6 @@ const observer = new MutationObserver((mutations) => {
 
 // Start observing the document body for changes
 observer.observe(document.body, { childList: true, subtree: true });
-
-// Initial call in case the element is already present
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM fully loaded and parsed");
-    addUserEventListener();
-    addContent();
-    checkColor();
-    localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
-});
 
 //Add content to the user settings
 function addContent() {

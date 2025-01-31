@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
     <script src="assets/js/heading.js"></script>
     <script src="assets/js/user.js" defer></script>
+    <script src="assets/js/footer.js" defer></script>
     <script src="assets/js/mode.js" defer></script>
 </head>
 <body>
@@ -485,4 +486,9 @@
         </div>
     </div>
 </body>
+<footer id="footer" class="center">
+    <div id="footer-content">
+        <!--code gets injected by header.js-->
+    </div>
+</footer>
 </html>
