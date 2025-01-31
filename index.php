@@ -65,7 +65,7 @@
                                     <div class="row">
                                         <div class="hersteller">'.$row['hersteller'].'</div>
                                         <div class="material">'.$row['material'].'</div>
-                                        <div class="farbe">'.$row['farbe'].'</div>
+                                        <div class="farbe"><nobr><span class="colordot" style="background-color:'.$row['farbe'].'"></span>'.$row['farbe'].'</nobr></div>
                                         <div class="durchmesser">'.$row['dicke'].'mm</div>
                                     </div>
                                     <div class="row">
@@ -73,8 +73,8 @@
                                         <div class="gewicht">'.$row['gewicht'].'g</div>
                                         <div class="besitzer">'.$row['besitzer'].'</div>
                                         <div class="anzahl">'.$row['anzahl'].'</div>
-                                        <div class="bedtemp center">'.$row['bedtemp'].'°C</div>
-                                        <div class="nozzletemp center">'.$row['nozzletemp'].'°C</div>
+                                        <div class="bedtemp center"><span class="material-symbols-outlined">heat</span>'.$row['bedtemp'].'°C</div>
+                                        <div class="nozzletemp center"><span class="material-symbols-outlined center">arrow_downward</span>'.$row['nozzletemp'].'°C</div>
                                     </div>
                                 </div>    
                             </div>';
