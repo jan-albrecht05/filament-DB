@@ -1,0 +1,29 @@
+.part{
+    margin-bottom: 2rem;
+}
+details::before,
+summary::before {
+    content: "";
+}
+details{
+    background-color: var(--bg-highlight-color);
+    border-radius: 10px;
+    transition: all .3s;
+}
+summary{
+    background-color: var(--bg-highlight2-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+details p{
+    margin: 1rem;
+    margin-left: 2rem;
+    display: inline-block;
+}
+details[open] > summary{
+    border-radius: 10px 10px 0px 0px;
+}
+details:hover,
+details[open]{
+    filter: drop-shadow(0px 5px 5px var(--shadow));
+}
