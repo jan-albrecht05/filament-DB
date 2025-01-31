@@ -31,7 +31,7 @@
             <label for="vendor">Hersteller:</label>
             <input type="text" id="vendor" name="vendor" required><br>
             <label for="color">Farbe:</label>
-            <input type="text" id="color" name="color" required><br>
+            <input type="color" id="color" name="color" value="red" required><br>
             <label for="material">Material:</label>
             <input type="text" id="material" name="material" placeholder="PLA" required><br>
             <div id="diameter-input">
@@ -79,31 +79,30 @@
             $anzahl = $_POST['anzahl'];
             $bedtemp = $_POST['bedtemp'];
             $nozzletemp = $_POST['nozzletemp'];
-            $additionalinfo = $_POST['additionalinfo'];
-
             // Handle file uploads
             //$benchyImg = $_FILES['img']['name'];
             //$spoolImg = $_FILES['img2']['name'];
+            $additionalinfo = $_POST['additionalinfo'];
 
             // Database connection
-            $conn = new mysqli("localhost", "root", "", "filaments");
+            $conn = new PDO('sqlite:../assets/db/ff.db', "", "", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,));
 
             // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+            //if ($conn->connect_error) {
+              //  die("Connection failed: " . $conn->connect_error);
+            //}
 
             // Insert data into the database
-            $sql = "INSERT INTO filaments (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, benchyImg, spoolImg, additionalinfo) 
-                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$benchyImg', '$spoolImg', '$additionalinfo')";
+            $sql = "INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, additionalinfo) 
+                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$additionalinfo')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                //echo "Error: " . $sql . "<br>" . $conn->error;
             }
 
-            $conn->close();
+            //$conn->close();
         }
         ?>
     </div>

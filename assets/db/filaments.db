@@ -1,16 +1,15 @@
-CREATE TABLE filaments (
+CREATE TABLE filament (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    type TEXT NOT NULL,
-    color TEXT NOT NULL,
-    diameter REAL NOT NULL,
-    weight REAL NOT NULL,
-    price REAL NOT NULL,
-    manufacturer TEXT NOT NULL,
-    nozzle_temp INTEGER NOT NULL,
-    bed_temp INTEGER NOT NULL,
-    owner TEXT NOT NULL,
-    image1 TEXT NOT NULL,
-    image2 TEXT NOT NULL,
-    additional_info TEXT NOT NULL
+    hersteller VARCHAR(15) NOT NULL,
+    farbe VARCHAR(7) NOT NULL,
+    material VARCHAR(7) NOT NULL,
+    dicke INT NOT NULL,
+    price INT NOT NULL,
+    gewicht INT NOT NULL,
+    besitzer VARCHAR(25) NOT NULL,
+    anzahl INT NOT NULL,
+    bedtemp INT NOT NULL,
+    nozzletemp INT NOT NULL,
+    additionalinfo VARCHAR(255) NOT NULL,
+    active BOOLEAN DEFAULT true
 );
