@@ -70,7 +70,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 ### Anzeige in Liste/Grid:
 - [ ] bei Click auf Item => get _id_ => a href="/pages/filament.php?view=_id_"
 
-## filament.php
+### filament.php
 - [ ] Abfrage nach token nach "?view=" aus DB
 - [ ] bei [private]-Daten nur mit Anmeldung => Weiterleitung zur Anmeldung und zurück
 
