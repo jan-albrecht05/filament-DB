@@ -11,9 +11,9 @@
     <script src="../assets/js/heading.js"></script>
     <script src="../assets/js/footer.js" defer></script>
     <script>
-        window.onload = () =>{
-            footer()
-        }
+        document.addEventListener("load", () =>{
+           footer()
+        });
         usersettigsopen = false;
         function listmode(){};
         </script>
@@ -30,7 +30,7 @@
             let color = localStorage.getItem('user-main-color');
             if (color) {
                 document.documentElement.style.setProperty('--user-main-color', color);
-            }
+            };
         })
     </script>
 </head>

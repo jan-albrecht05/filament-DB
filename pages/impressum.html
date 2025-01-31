@@ -11,11 +11,9 @@
     <script src="../assets/js/heading.js"></script>
     <script src="../assets/js/footer.js" defer></script>
     <script>
-        window.onload = () =>{
+        document.addEventListener("load", () =>{
             footer()
-        }
-        usersettigsopen = false;
-        function listmode(){};
+        });
         </script>
         <script src="../assets/js/user.js" defer></script>
     <style>
@@ -25,14 +23,6 @@
             }
         }
     </style>
-    <script>
-        window.addEventListener("load", () =>{
-            let color = localStorage.getItem('user-main-color');
-            if (color) {
-                document.documentElement.style.setProperty('--user-main-color', color);
-            }
-        })
-    </script>
 </head>
 <body>
     <div id="header"><!--Code injectedd via assets/js/heading.js--></div>

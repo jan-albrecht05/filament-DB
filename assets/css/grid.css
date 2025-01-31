@@ -35,13 +35,25 @@
     font-size: 130%;
     margin-right: .5rem;
 }
-.filament .row .farbe,
 .filament .row .durchmesser,
 .filament .row .gewicht,
 .filament .row .preis,
 .filament .row .anzahl,
 .filament .row .besitzer{
     display: none;
+}
+.filament .row .farbe{
+    display: flex;
+    align-items: center;
+}
+.colordot{
+    display:inline-block;
+    width: 1rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin-right: .5rem;
+    border:1px solid var(--bg-highlight2-color);
+    margin-top: .5rem;
 }
 .filament .row:nth-child(2){
     display: flex;
