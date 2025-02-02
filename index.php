@@ -12,6 +12,7 @@
     <script src="assets/js/user.js" defer></script>
     <script src="assets/js/footer.js" defer></script>
     <script src="assets/js/mode.js" defer></script>
+    <script src="assets/js/links.js" defer></script>
     <style>
         @media (min-height:500px) {
             #footer{

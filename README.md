@@ -30,7 +30,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - Additional Info
     - active: true/false
 - [x] Page for adding content
-    - [ ] CSS for Input-Fields needs a bit more work
+    - [x] CSS for Input-Fields needs a bit more work
 - [x] Search Page "?query="
    - [ ] connecting to DB
 - [ ] Filament-page:
