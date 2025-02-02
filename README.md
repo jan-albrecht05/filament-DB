@@ -12,7 +12,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [x] "Hinzufügen"-Button
     - [ ] Sort by: Farbe, Material, Dicke (Header mit Buttons)
     - [ ] last used filemants anzeigen/vorschlagen
-    - [ ] Links to filament page
+    - [x] Links to filament page
     - [ ] QR-Scanner
 - [x] Datenbank aus:
     - Nummer
@@ -33,7 +33,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [x] CSS for Input-Fields needs a bit more work
 - [x] Search Page "?query="
    - [ ] connecting to DB
-- [ ] Filament-page:
+- [x] Filament-page:
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
 - [ ] zweite Datenbank mit Nutzerdaten
@@ -68,11 +68,13 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [ ] Sortierungsmöglichkeiten wie in index.php
 
 ### Anzeige in Liste/Grid:
-- [ ] bei Click auf Item => get _id_ => a href="/pages/filament.php?view=_id_"
+- [x] bei Click auf Item => get _id_ => a href="/pages/filament.php?view=_id_"
 
 ### filament.php
-- [ ] Abfrage nach token nach "?view=" aus DB
+- [x] Abfrage nach token nach "?view=" aus DB
 - [ ] bei [private]-Daten nur mit Anmeldung => Weiterleitung zur Anmeldung und zurück
+- [ ] button "bearbeiten"
+- [ ] button "deaktivieren"
 
 ### Klick auf Hinzufügen ohne Anmeldung:
 - [ ] Weiterleitung zur Anmeldeseite, dann zu pages/add.php
