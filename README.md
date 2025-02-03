@@ -47,7 +47,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [ ] FAQ.html
     - [x] Impressum.html
     - [x] GitHub Link
-- [ ] QR-Codes / Nummern für Spulen
+- [x] QR-Codes / Nummern für Spulen
 - [ ] Bilder der Benchys
 - [ ] hinzufügen der einzelnen Filamente
 
