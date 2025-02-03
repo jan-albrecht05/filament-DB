@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>100 QR-Codes</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    #main{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .code{
+        width: 3cm;
+        height: auto;
+        padding: .1cm;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    img{
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+    p{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 200%;
+        margin: 0;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+</style>
+<script>
+    function erstellen(){
+        console.log("script started");
+        var container = document.getElementById("main")
+        for(var i = 1; i <= 108; i++){
+            var newDiv = document.createElement("div");
+            // Set class and id attributes
+            newDiv.className = "code";
+            newDiv.id = "nummer_" + i;
+            // Set inner HTML
+            if (i < 10){i = '000'+i}else
+            if (i < 100){i = '00'+i}else
+            if (i < 1000){i = '0'+i};
+            newDiv.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data='+i+'">'+'<p class="text">#'+i+'</p>';
+            // Append the new div to the container
+            container.appendChild(newDiv);
+        }
+    }
+</script>
+<body onload="erstellen()">
+    <div id="main" >
+        
+    </div>
+</body>
+</html>
