@@ -68,6 +68,7 @@
             </div>
         </form>
         <?php
+        $allowedimgtypes = array("png", "jpeg", "jpg", "ico");
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hersteller = $_POST['vendor'];
             $farbe = $_POST['color'];
@@ -80,8 +81,34 @@
             $bedtemp = $_POST['bedtemp'];
             $nozzletemp = $_POST['nozzletemp'];
             // Handle file uploads
-            //$benchyImg = $_FILES['img']['name'];
-            //$spoolImg = $_FILES['img2']['name'];
+            $benchyImg = $_FILES['img']['name'];
+            $img_extention = pathinfo($benchyImg, PATHINFO_EXTENSION);
+            if(in_array($img_extention, $allowedimgtypes)){
+                $tmpNameBenchy = $_FILES['img'][$id.'.01'];
+                $targetpath = "../assets/img/uploads/".$tmpNameBenchy;
+                if (move_uploaded_file($tmpNameBenchy, $targetpath)){
+                    echo "done";
+                }
+                else{
+                    echo "Error - file not uploaded";
+                }
+            }else{
+                echo "Filetype not supported";
+            }
+            $spoolImg = $_FILES['img2']['name'];
+            $img2_extention = pathinfo($spoolImg, PATHINFO_EXTENSION);
+            if(in_array($img2_extention, $allowedimgtypes)){
+                $tmpNameSpool = $_FILES['img2'][$id.'.02'];
+                $targetpath = "../assets/img/uploads/".$tmpNameSpool;
+                if (move_uploaded_file($tmpNameSpool, $targetpath)){
+                    echo "done";
+                }
+                else{
+                    echo "Error - file not uploaded";
+                }
+            }else{
+                echo "Filetype not supported";
+            }
             $additionalinfo = $_POST['additionalinfo'];
 
             // Database connection
@@ -93,8 +120,8 @@
             //}
 
             // Insert data into the database
-            $sql = "INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, additionalinfo) 
-                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$additionalinfo')";
+            $sql = "INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, benchyImg, spoolImg, additionalinfo) 
+                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$benchyImg', '$spoolImg', '$additionalinfo')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";

@@ -10,6 +10,8 @@ CREATE TABLE filament (
     anzahl INT NOT NULL,
     bedtemp INT NOT NULL,
     nozzletemp INT NOT NULL,
+    benchyImg VARCHAR(255) NOT NULL,
+    spoolImg VARCHAR(255) NOT NULL,
     additionalinfo VARCHAR(255) NOT NULL,
     active BOOLEAN DEFAULT true
 );
