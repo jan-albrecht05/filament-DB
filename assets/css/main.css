@@ -80,17 +80,18 @@ img{
     font-size: 200%;
     border-radius: 0px 5px 5px 0px;
     border-style: none;
-    border-top: 2px solid var(--font-color);
-    border-left: 2px solid var(--font-color);
-    border-bottom: 2px solid var(--font-color);
-    border-right: 2px solid var(--font-color);
+    border: 2px solid var(--font-color);
     z-index: 2;
 }
 #suche #text-input:focus + button{
     border-color: var(--user-main-color);
     border-left-color: var(--font-color);
 }
-#suche #search-btn span{
+#scanner-btn{
+    display: none;
+}
+#suche #search-btn span,
+#suche #scanner-btn span{
     color: var(--font-color);
     font-size: 130%;
     margin-top: .3rem;
@@ -408,6 +409,16 @@ img{
     #header a{
         min-width: 25%;
     }
+    #search-btn{
+        display: none;
+    }
+    #scanner-btn{
+        display: flex;
+        font-size: 100%;
+    }
+    #scanner-btn span{
+        margin-left: 0rem;
+    }
 }
 @media (max-width:600px) {
     #header{
@@ -427,8 +438,7 @@ img{
     }
     #suche button{
         width: 3rem;
-        margin-left: -3rem;
-        border-right: 2px solid var(--font-color);
+        margin-left: -2.9rem;
     }
     #suche #search-btn span{
         margin-top: 0;

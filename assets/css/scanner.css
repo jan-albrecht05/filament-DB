@@ -1,0 +1,46 @@
+img{
+    width: 100%;
+    height: auto;
+}
+#scan{
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-inline: auto;
+    background-color: black;
+    border-radius: 35px;
+}
+#frame{
+    z-index: 3;
+    position: absolute;
+    max-width: 280px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#animatedline{
+    width: 275px;
+    height: 1px;
+    background-color: red;
+    z-index: 2;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 12px;
+    animation: scan 3s infinite;
+}
+#video{
+    height: 100%;
+    width: auto;
+    scale: 2;
+}
+@keyframes scan {
+    0%{
+        margin-top: 15px;
+    }
+    50%{
+        margin-top: 285px
+    }
+    1000%{
+        margin-top: 15px;
+    }
+}
