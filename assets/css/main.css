@@ -124,7 +124,7 @@ img{
 #user-settings{
     justify-content: end;
     position: absolute;
-    transform: translateY(-10rem);
+    transform: translateY(-13rem);
     transition: transform .5s ease-in-out;
     z-index: 1;
     right: 0;
@@ -143,6 +143,31 @@ img{
 }
 #color-input-heading{
     font-size: 120%;
+}
+#dark-light{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+#dark-light-toggle{
+    width: 2rem;
+    height: 1rem;
+    border: 2px solid var(--font-color);
+    border-radius: 25px;
+    margin-inline: .5rem;
+    display: flex;
+    align-items: center;
+}
+#kugel{
+    display: inline-block;
+    height: .8rem;
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+    background-color: var(--font-color);
+    margin-left: .1rem;
+    margin-right: .1rem;
+    transition: all .3s;
 }
 #login-button-div{
     width: 100%;
@@ -188,7 +213,7 @@ img{
 #controls #addbtn{
     min-width: 10%;
     height: 2.5rem;
-    background-color: var(--bg-highlight-color);
+    background-color: var(--bg-highlight2-color);
     border: 2px solid var(--bg-highlight2-color);
     border-radius: 5px;
     color: var(--font-color);
@@ -200,7 +225,6 @@ img{
 }
 #controls #addbtn:hover{
     filter: drop-shadow(0px 5px 5px var(--shadow));
-    background-color: var(--bg-highlight2-color);
 }
 #toggleswitch{
     display: flex;

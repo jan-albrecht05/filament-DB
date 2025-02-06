@@ -1,4 +1,4 @@
-//everything realted to the user preferences saved in the local storage
+//everything related to the user preferences saved in the local storage
 
 let usersettigsopen = false;
 
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addContent();
     checkColor();
     footer();
+    checkTheme();
     localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
 });
 
@@ -20,7 +21,7 @@ function usersettings() {
         usersettigsopen = !usersettigsopen;
         userSettingsElement.style.transform = usersettigsopen
             ? "translateY(0rem)"
-            : "translateY(-10rem)";
+            : "translateY(-13rem)";
     }
 }
 
@@ -41,7 +42,7 @@ document.addEventListener("click", (event) => {
 
     // Otherwise, close the user settings
     usersettigsopen = false;
-    userSettingsElement.style.transform = "translateY(-10rem)";
+    userSettingsElement.style.transform = "translateY(-13rem)";
 });
 
 // Function to add event listener to the #user element
@@ -70,7 +71,7 @@ observer.observe(document.body, { childList: true, subtree: true });
 //Add content to the user settings
 function addContent() {
     const userElement = document.getElementById("user-settings");
-    userElement.innerHTML = "<span id='color-input-heading'>Prev. Color: </span><input type='color' id='color-picker' value='#da00bd' onchange='changeColor()'><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
+    userElement.innerHTML = "<span id='color-input-heading'>Prev. Color: </span><input type='color' id='color-picker' value='#da00bd' onchange='changeColor()'><div id='dark-light' onclick='changetheme()'><span class='material-symbols-outlined'>dark_mode</span><span id='dark-light-toggle'><span id='kugel'></span></span><span class='material-symbols-outlined'>light_mode</span></div><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
 }
 //Let's user set a preferred color
 function changeColor() {
@@ -83,6 +84,38 @@ function checkColor(){
     let color = localStorage.getItem('user-main-color');
     if (color) {
         document.documentElement.style.setProperty('--user-main-color', color);
-        document.getElementById("user-settings").innerHTML = "<span id='color-input-heading'>Pref. Color: </span><input type='color' id='color-picker' value='" + color + "' onchange='changeColor()'><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
+        document.getElementById("user-settings").innerHTML = "<span id='color-input-heading'>Pref. Color: </span><input type='color' id='color-picker' value='" + color + "' onchange='changeColor()'><div id='dark-light' onclick='changetheme()'><span class='material-symbols-outlined'>dark_mode</span><span id='dark-light-toggle'><span id='kugel'></span></span><span class='material-symbols-outlined'>light_mode</span></div><div id='login-button-div'><button id='login-button' class='center' onclick='login()'>login<span class='material-symbols-outlined'>login</span></button></div>";
     }
+}
+function changetheme(){
+    let theme = localStorage.getItem('user-theme');
+    if (theme == 'dark'){
+        //set light theme
+        setLightTheme();
+    }
+    else{
+        //set dark theme
+        setDarkTheme();
+    }
+}
+function checkTheme(){
+    let theme = localStorage.getItem('user-theme');
+    if (theme == 'dark'){
+        setDarkTheme();
+    }
+    else{
+        setLightTheme();
+    }
+}
+function setDarkTheme(){
+    document.getElementById("kugel").style.marginLeft= "auto";
+    document.getElementById("kugel").style.marginRight= ".1rem";
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('user-theme', 'dark');
+}
+function setLightTheme(){
+    document.getElementById("kugel").style.marginRight= "auto";
+    document.getElementById("kugel").style.marginLeft= ".1rem";
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('user-theme', 'light');
 }
