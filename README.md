@@ -11,7 +11,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [x] different modes (Table-/Grid-View)
     - [x] "Hinzufügen"-Button
     - [ ] Sort by: Farbe, Material, Dicke (Header mit Buttons)
-    - [ ] last used filemants anzeigen/vorschlagen
+    - [ ] last used Filaments anzeigen/vorschlagen
     - [x] Links to filament page
     - [x] QR-Scanner
 - [x] Datenbank aus:
@@ -44,7 +44,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [x] costom color toggle
 - [x] Dark-/Light-Mode toggle
 - [x] Footer:
-    - [ ] FAQ.html
+    - [x] FAQ.html
     - [x] Impressum.html
     - [x] GitHub Link
 - [x] QR-Codes / Nummern für Spulen
