@@ -486,8 +486,10 @@ img{
         width: 3rem;
         margin-left: -2.9rem;
     }
-    #suche #search-btn span{
-        margin-top: 0;
+    #suche #search-btn span,
+    #suche #scanner-btn span{
+        margin-top: 0rem;
+        margin-left: -.1rem;
     }
     /*user*/
     #user{
