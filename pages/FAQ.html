@@ -25,6 +25,11 @@
             if (color) {
                 document.documentElement.style.setProperty('--user-main-color', color);
             };
+            //check if user comes from the cookie baner
+            if (window.location.href.indexOf('cookie-frage') != -1) {
+                document.getElementById('cookie-frage').open = true;
+
+            }
         })
     </script>
     <script>
@@ -146,6 +151,13 @@
                 <details>
                     <summary>Gibt es eine Community oder einen Support für Fragen?</summary>
                     <p class="answer">Es gibt eine kleine, aber stetig wachsende, Gemeinschaft an 3D-Druck- Begeisterten an unserer Schule. GAnz weit vorn dabei sind Jan Albrecht und Thorsten Henke.</p>
+                </details>
+            </div>
+        <h2>Cookies</h2>
+            <div class="part">
+                <details id="cookie-frage">
+                    <summary>Warum werden Cookies verwendet?</summary>
+                    <p class="answer">Die verwendeten Cookies sind technisch notwendig, um die personalisierten Website-Eigenschaften zu gewährleisten.<br>Zu diesen Funktionen gehören: die Benutzer-Farbe, der Modus (Tag/Nacht) und den Benutzeraccount.<br><button onclick="localStorage.clear();">alle Websitedaten löschen</button></p>
                 </details>
             </div>
     </div>

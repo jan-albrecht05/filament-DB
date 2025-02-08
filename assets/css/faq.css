@@ -49,6 +49,19 @@ h2:first-of-type{
 #main{
     margin-bottom: 4rem;
 }
+button{
+    background-color: var(--bg-highlight-color);
+    color: var(--font-color);
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-top: 1rem;
+    transition: all .3s;
+}
+button:hover{
+    color: red;
+    border-color: red;
+}
 @media (max-width: 600px) {
     details p{
         margin-left: 1rem;

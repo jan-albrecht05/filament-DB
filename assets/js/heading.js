@@ -2,6 +2,7 @@ let homepage = false;
 let logolink, userimglink = "";
 window.addEventListener("load", () =>{
     heading();
+    checkforCookies();
 });
 
 //checks the current path

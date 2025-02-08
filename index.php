@@ -13,6 +13,7 @@
     <script src="assets/js/footer.js" defer></script>
     <script src="assets/js/mode.js" defer></script>
     <script src="assets/js/links.js" defer></script>
+    <script src="assets/js/cookies.js" defer></script>
     <style>
         @media (min-height:500px) {
             #footer{
@@ -97,6 +98,12 @@
                     echo "<a href='pages/add.php' class='center' id='addfilamentbtn' title='Filament Hinzufügen'>+</a>";
                 }
             ?>
+        </div>
+    </div>
+    <div id="cookies">
+        <div id="cookies-content">
+            <p>Diese Website verwendet Cookies.<br><a href="pages/FAQ.html#cookie-frage" class="center"><u>weitere Informationen</u><span class="material-symbols-outlined">open_in_new</span></a></p>
+            <button onclick="AcceptCookies()">okay</button>
         </div>
     </div>
 </body>
