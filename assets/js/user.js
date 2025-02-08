@@ -108,13 +108,13 @@ function checkTheme(){
     }
 }
 function setDarkTheme(){
-    document.getElementById("kugel").style.marginLeft= "auto";
+    document.getElementById("kugel").style.transform ="translateX(.95rem)";
     document.getElementById("kugel").style.marginRight= ".1rem";
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('user-theme', 'dark');
 }
 function setLightTheme(){
-    document.getElementById("kugel").style.marginRight= "auto";
+    document.getElementById("kugel").style.transform ="translateX(.95rem)";
     document.getElementById("kugel").style.marginLeft= ".1rem";
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('user-theme', 'light');
