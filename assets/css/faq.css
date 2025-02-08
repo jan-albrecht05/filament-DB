@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 a{
     color: var(--font-color);
     text-decoration: underline var(--user-main-color);
