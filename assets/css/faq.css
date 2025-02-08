@@ -52,7 +52,7 @@ h2:first-of-type{
 #main{
     margin-bottom: 4rem;
 }
-button{
+p button{
     background-color: var(--bg-highlight-color);
     color: var(--font-color);
     border: 1px solid var(--font-color);
@@ -61,7 +61,7 @@ button{
     margin-top: 1rem;
     transition: all .3s;
 }
-button:hover{
+p button:hover{
     color: red;
     border-color: red;
 }
