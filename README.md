@@ -11,7 +11,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [x] different modes (Table-/Grid-View)
     - [x] "Hinzufügen"-Button
     - [ ] Sort by: Farbe, Material, Dicke (Header mit Buttons)
-    - [ ] Button ergänzen
+    - [x] Button ergänzen
     - [ ] last viewed Filaments anzeigen/vorschlagen
     - [x] Links to filament page
     - [x] QR-Scanner
