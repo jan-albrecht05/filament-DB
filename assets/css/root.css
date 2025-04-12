@@ -6,6 +6,7 @@
     --bg-highlight2-color: #404040;
     --shadow: rgb(31, 31, 31);
     --blk: rgb(24, 24, 24);
+    --github-icon: url('../icons/GitHub_Invertocat_Light.png');
 }
 [data-theme="dark"]{
     --font-color: #111;
@@ -14,4 +15,5 @@
     --bg-highlight2-color: #dfdfdf;
     --shadow: rgb(163, 163, 163);
     --blk: rgb(107, 107, 107);
+    --github-icon: url('../icons/GitHub_Invertocat_Dark.png');
 }
