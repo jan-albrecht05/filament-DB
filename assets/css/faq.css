@@ -52,7 +52,7 @@ h2:first-of-type{
 #main{
     margin-bottom: 4rem;
 }
-p button{
+button{
     background-color: var(--bg-highlight-color);
     color: var(--font-color);
     border: 1px solid var(--font-color);
@@ -61,9 +61,31 @@ p button{
     margin-top: 1rem;
     transition: all .3s;
 }
-p button:hover{
+p button:hover,
+#cookie-del-frage button.yes{
     color: red;
     border-color: red;
+}
+button.ok{
+    color: rgb(0, 207, 0);
+    border-color: rgb(0, 207, 0);
+
+}
+.alert{
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--font-color);
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+}
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
 }
 @media (max-width: 600px) {
     details p{

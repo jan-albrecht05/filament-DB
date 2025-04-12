@@ -16,8 +16,9 @@
         document.addEventListener("load", () =>{
            footer()
         });
-        usersettigsopen = false;
-        function listmode(){};
+        function openCookieMenu() {
+            document.getElementById('cookie-del-frage').style.display = "block";
+        }
     </script>
     <script>
         window.addEventListener("load", () =>{
@@ -157,8 +158,22 @@
             <div class="part">
                 <details id="cookie-frage">
                     <summary>Warum werden Cookies verwendet?</summary>
-                    <p class="answer">Die verwendeten Cookies sind technisch notwendig, um die personalisierten Website-Eigenschaften zu gewährleisten.<br>Zu diesen Funktionen gehören: die Benutzer-Farbe, der Modus (Tag/Nacht) und den Benutzeraccount.<br><button onclick="localStorage.clear();">alle Websitedaten löschen</button></p>
+                    <p class="answer">Die verwendeten Cookies sind technisch notwendig, um die personalisierten Website-Eigenschaften zu gewährleisten.<br>Zu diesen Funktionen gehören: die Benutzer-Farbe, der Modus (Tag/Nacht) und den Benutzeraccount.<br><button onclick="openCookieMenu()">alle Websitedaten löschen</button></p>
                 </details>
+            </div>
+            <div class="alert" id="cookie-del-frage" style="display: none;">
+                <h2>Alle Websitedaten löschen?</h2>
+                <p>Bei Bestätigung werden alle Websitedaten unwiederruflich gelöscht.</p>
+                <div class="button-container">
+                    <button class="yes" onclick="localStorage.clear();document.getElementById('cookie-del-frage').style.display = 'none';document.getElementById('all-deleted').style.display = 'block';">Ja, alle Daten löschen</button>
+                    <button class="no" onclick="document.getElementById('cookie-del-frage').style.display = 'none';">Nein, Daten behalten</button>
+                </div>
+            </div>
+            <div class="alert" id="all-deleted" style="display: none;">
+                <h2>Alle Websitedaten gelöscht!</h2>
+                <p>Die Websitedaten wurden erfolgreich gelöscht.</p>
+                <p>Nach Klicken der Schaltfläche läd die Seite neu, um die Änderungen zu verarbeiten.</p>
+                <button class="ok" onclick="location.reload();">OK</button>
             </div>
     </div>
 </body>
