@@ -146,10 +146,11 @@ img{
     font-size: 120%;
 }
 #dark-light{
-    width: 100%;
+    width: max-content;
     height: 3rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 #dark-light-toggle{
     width: 2rem;
