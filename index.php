@@ -62,7 +62,7 @@
                     $db = new SQLite3("assets/db/ff.db");
 
                     // Query to select all data from the filament table
-                    $result = $db->query("SELECT * FROM filament");
+                    $result = $db->query("SELECT * FROM filament");// WHERE name like *
 
                     // Check if there are any rows returned
                     if ($result) {
