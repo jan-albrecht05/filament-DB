@@ -35,25 +35,25 @@
         </div>
         <div id="modecss" hidden><!--CSS for Filament-view gets inserted here via /assets/js/mode.js--></div>
         <div class="filament" id="filamentheading">
-            <div class="img center">Bild</div>
+            <div class="img" style="text-align:center">Bild</div>
             <div class="box">
                 <div class="row">
-                    <div class="hersteller">Hersteller</div>
-                    <div class="material">Material</div>
+                    <button class="hersteller"><span class="text">Hersteller</span><span class="line"></span></button>
+                    <button class="material"><span class="text">Material</span><span class="line"></span></button>
                     <div class="farbe">Farbe</div>
                     <div class="durchmesser">Durchmesser</div>
                 </div>
                 <div class="row">
-                    <div class="preis">Preis</div>
-                    <div class="gewicht">Gewicht</div>
+                    <button class="preis"><span class="text">Preis</span><span class="line"></span></button>
+                    <button class="gewicht"><span class="text">Gewicht</span><span class="line"></span></button>
                     <div class="besitzer">Besitzer</div>
                     <div class="anzahl">Anzahl</div>
-                    <div class="bedtemp center">Bedtemp.</div>
-                    <div class="nozzletemp center">Nozzletemp.</div>
+                    <div class="bedtemp">Bedtemp.</div>
+                    <div class="nozzletemp">Nozzletemp.</div>
                     <div class="additionalinfo"><!--PHP: Additional Info--></div>
-                    </div>
                 </div>
             </div>
+        </div>
         <div id="filament-output">
             <!--PHP: Filament-Output--> 
             <?php
