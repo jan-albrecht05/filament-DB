@@ -324,7 +324,7 @@ img{
 }
 #add-form input:disabled{
     background-color: var(--bg-color);
-    color: var(--blk);
+    color: var(--bg-highlight2-color);
     user-select: none;
 }
 #add-form input:focus{
@@ -333,6 +333,24 @@ img{
 #add-form input[type="color"]{
     width: 5%;
     padding:0
+}
+#add-form select{
+    appearance: none; /* Remove default arrow for custom styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: .2rem .5rem;
+    height: 2.5rem;
+    background-color: var(--bg-highlight-color);
+    border: 1px solid var(--bg-highlight2-color);
+    color: var(--font-color);
+    font-size: 110%;
+    border-radius: 5px;
+    margin-top: .5rem;
+    margin-bottom: .8rem;
+}
+#add-form option{
+    background-color: var(--bg-highlight-color);
+    color: var(--font-color);
 }
 #add-form #diameter-input #diameter1{
     width: 40%;

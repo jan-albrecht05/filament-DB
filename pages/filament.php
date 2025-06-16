@@ -41,8 +41,12 @@
         ?>
         <div id="page">
             <div id="left">
-                <div id="benchyImg" class="image"></div>
-                <div id="SpoolImg" class="image"></div>
+                <div id="benchyImg" class="image">
+                    <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>">
+                </div>
+                <div id="SpoolImg" class="image">
+                    <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>">
+                </div>
             </div>
             <div id="right">
                 <p id="ID">ID: <?php echo ($row["id"])?></p>

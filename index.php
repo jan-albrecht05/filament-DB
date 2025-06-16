@@ -71,7 +71,12 @@
                             $hasRows = true;
                             echo '
                             <div class="filament" id="'.$row['id'].'">
-                                <div class="img"></div>
+                                <div class="img">';
+                                    if (!empty($row['benchyImg'])) {
+                                        echo '<img id="benchy" src="assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'">';
+                                        echo '<img id="spool" src="assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'">';
+                                    }
+                                echo '</div>
                                 <div class="box">
                                     <div class="row">
                                         <div class="hersteller">'.$row['hersteller'].'</div>

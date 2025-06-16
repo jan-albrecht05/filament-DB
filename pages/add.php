@@ -20,6 +20,11 @@
     </style>
 </head>
 <body>
+    <?php
+            $db = new SQLite3("../assets/db/ff.db");
+            $result = $db->querySingle("SELECT MAX(id) FROM filament");
+            $id = $result ? $result + 1 : 1;
+        ?>
     <div id="header"><!--Code injectedd via assets/js/heading.js--></div>
     <div id="user-settings"><!--Code injected via assets/js/user.js--></div>
     </div>
@@ -27,13 +32,25 @@
         <h1>Filament hinzufügen</h2>
         <form id="add-form" method="POST" enctype="multipart/form-data">
             <label for="id">Token:</label>
-            <input type="text" id="id" name="id" disabled title="nicht änderbar"><br>
+            <input type="text" id="id" name="id_display" value="<?php echo $id; ?>" disabled title="nicht änderbar"><br>
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <label for="vendor">Hersteller:</label>
             <input type="text" id="vendor" name="vendor" required><br>
             <label for="color">Farbe:</label>
             <input type="color" id="color" name="color" value="#ff0000" required><br>
             <label for="material">Material:</label>
-            <input type="text" id="material" name="material" placeholder="PLA" required><br>
+            <select id="material" name="material" required>
+                <option value="" disabled selected>Bitte wählen ▼</option>
+                <option value="ABS">ABS</option>
+                <option value="ASA">ASA</option>
+                <option value="CPE">CPE</option>
+                <option value="PLA">PLA</option>
+                <option value="PLA+">PLA+</option>
+                <option value="PETG">PETG</option>
+                <option value="PETG-CF">PETG-CF</option>
+                <option value="TPU">TPU</option>
+                <option value="Andere">Andere</option>
+            </select><br>
             <div id="diameter-input">
                 <label for="diameter">Durchmesser:</label>
                 <div id="diameter-radio">
@@ -47,7 +64,7 @@
             <label for="price">Preis:</label>
             <input type="number" id="price" name="price" placeholder="Preis pro Spule" required><br>
             <label for="weight">Gewicht:</label>
-            <input type="number" id="weight" name="weight" placeholder="Gewicht der Spule" required><br>
+            <input type="number" id="weight" name="weight" placeholder="Gewicht der Spule in Gramm" required><br>
             <label for="owner">Besitzer:</label>
             <input type="text" id="owner" name="owner" placeholder="Besitzer der Spule" required><br>
             <label for="anzahl">Anzahl Spulen:</label>
@@ -67,6 +84,7 @@
                 <button id="resetbtn" type="reset">reset</button>
             </div>
         </form>
+        
         <?php
         $allowedimgtypes = array("png", "jpeg", "jpg", "ico");
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -84,13 +102,13 @@
             $benchyImg = $_FILES['img']['name'];
             $img_extention = pathinfo($benchyImg, PATHINFO_EXTENSION);
             if(in_array($img_extention, $allowedimgtypes)){
-                $tmpNameBenchy = $_FILES['img'][$id.'.01'];
-                $targetpath = "../assets/img/uploads/".$tmpNameBenchy;
-                if (move_uploaded_file($tmpNameBenchy, $targetpath)){
-                    echo "done";
-                }
-                else{
-                    echo "Error - file not uploaded";
+                $tmpNameBenchy = $_FILES['img']['tmp_name'];
+                $benchyImgName = $id . '.benchy.' . $img_extention;
+                $targetpathBenchy = "../assets/img/uploads/" . $benchyImgName;
+                if (move_uploaded_file($tmpNameBenchy, $targetpathBenchy)) {
+                    echo "Benchy image uploaded.<br>";
+                } else {
+                    echo "Error - Benchy image not uploaded.<br>";
                 }
             }else{
                 echo "Filetype not supported";
@@ -98,13 +116,13 @@
             $spoolImg = $_FILES['img2']['name'];
             $img2_extention = pathinfo($spoolImg, PATHINFO_EXTENSION);
             if(in_array($img2_extention, $allowedimgtypes)){
-                $tmpNameSpool = $_FILES['img2'][$id.'.02'];
-                $targetpath = "../assets/img/uploads/".$tmpNameSpool;
-                if (move_uploaded_file($tmpNameSpool, $targetpath)){
-                    echo "done";
-                }
-                else{
-                    echo "Error - file not uploaded";
+                $tmpNameSpool = $_FILES['img2']['tmp_name'];
+                $spoolImgName = $id . '.spool.' . $img2_extention;
+                $targetpathSpool = "../assets/img/uploads/" . $spoolImgName;
+                if (move_uploaded_file($tmpNameSpool, $targetpathSpool)) {
+                    echo "Spool image uploaded.<br>";
+                } else {
+                    echo "Error - Spool image not uploaded.<br>";
                 }
             }else{
                 echo "Filetype not supported";
@@ -121,7 +139,7 @@
 
             // Insert data into the database
             $sql = "INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, benchyImg, spoolImg, additionalinfo) 
-                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$benchyImg', '$spoolImg', '$additionalinfo')";
+                    VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$benchyImgName', '$spoolImgName', '$additionalinfo')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";

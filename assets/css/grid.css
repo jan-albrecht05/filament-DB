@@ -22,9 +22,30 @@
     background-color: var(--bg-highlight-color);
     margin-bottom: .5rem;
     transition: all .3s;
+    overflow: hidden;
 }
 .filament:hover .img{
     background-image: url('../icons/no-spool.png');
+}
+.filament:hover .img #spool{
+    display: block !important;
+}
+.img img{
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+#spool{
+    display: none !important;
+}
+.filament:hover > .img #benchy{
+    display: none !important;
+    transition: all .3s;
+}
+.filament:hover > .img #spool{
+    display: block !important;
+    transition: all .3s;
+
 }
 .filament .hersteller{
     font-size: 160%;

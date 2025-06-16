@@ -57,6 +57,16 @@
     background-image: url('../icons/no-benchy.png');
     background-size: cover;
     background-color: var(--bg-highlight-color);
+    overflow: hidden;
+}
+img#benchy{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+img#spool{
+    display: none;
 }
 .box{
     width: 92%;
