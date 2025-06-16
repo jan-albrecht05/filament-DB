@@ -100,7 +100,7 @@ function changetheme(){
 }
 function checkTheme(){
     let theme = localStorage.getItem('user-theme');
-    if (theme == 'light'){
+    if (theme == 'dark'){
         setDarkTheme();
     }
     else{
