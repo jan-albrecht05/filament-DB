@@ -42,10 +42,10 @@
         <div id="page">
             <div id="left">
                 <div id="benchyImg" class="image">
-                    <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>">
+                    <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>" alt="">
                 </div>
                 <div id="SpoolImg" class="image">
-                    <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>">
+                    <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>" alt="">
                 </div>
             </div>
             <div id="right">
