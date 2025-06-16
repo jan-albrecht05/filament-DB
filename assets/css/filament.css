@@ -23,7 +23,7 @@
 #benchyImg img,
 #SpoolImg img{
     height: 100% !important;
-    width: auto !important;
+    object-fit: cover;
 }
 #SpoolImg{
     background-image: url('../../assets/icons/no-spool.png');

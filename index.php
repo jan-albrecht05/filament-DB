@@ -73,8 +73,8 @@
                             <div class="filament" id="'.$row['id'].'">
                                 <div class="img">';
                                     if (!empty($row['benchyImg'])) {
-                                        echo '<img id="benchy" src="assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'">';
-                                        echo '<img id="spool" src="assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'">';
+                                        echo '<img id="benchy" src="assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'" alt="">';
+                                        echo '<img id="spool" src="assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'" alt="">';
                                     }
                                 echo '</div>
                                 <div class="box">

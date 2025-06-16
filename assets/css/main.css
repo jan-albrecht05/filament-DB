@@ -64,7 +64,7 @@ img{
     padding-left: 2%;
     background-color: var(--bg-highlight2-color);
     color: var(--font-color);
-    border:solid var(--font-color) 2px;
+    border:solid var(--font-color) 1px;
     border-radius: 5px;
 }
 #suche #text-input:focus{
@@ -75,12 +75,12 @@ img{
 #suche button{
     background-color: var(--bg-highlight-color);
     margin-left: -4.8rem;
-    height: calc(50% + .4rem);
+    height: calc(50% + .3rem);
     width: 5rem;
     font-size: 200%;
     border-radius: 0px 5px 5px 0px;
     border-style: none;
-    border: 2px solid var(--font-color);
+    border: 1px solid var(--font-color);
     z-index: 2;
 }
 #suche #text-input:focus + button{

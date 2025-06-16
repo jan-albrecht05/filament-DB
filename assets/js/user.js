@@ -89,18 +89,18 @@ function checkColor(){
 }
 function changetheme(){
     let theme = localStorage.getItem('user-theme');
-    if (theme == 'dark'){
+    if (theme == 'light'){
         //set light theme
-        setLightTheme();
+        setDarkTheme();
     }
     else{
         //set dark theme
-        setDarkTheme();
+        setLightTheme();
     }
 }
 function checkTheme(){
     let theme = localStorage.getItem('user-theme');
-    if (theme == 'dark'){
+    if (theme == 'light'){
         setDarkTheme();
     }
     else{
