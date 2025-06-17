@@ -30,54 +30,56 @@
             $result = $stmt->execute();
 
             // Check if the record exists
-            if ($row = $result->fetchArray(SQLITE3_ASSOC)) {} 
-            else {
-                echo "No results found for ID: " . $id;
+            if ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+        ?>
+            <div id="page">
+                <div id="left">
+                    <div id="benchyImg" class="image">
+                        <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>" alt="">
+                    </div>
+                    <div id="SpoolImg" class="image">
+                        <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>" alt="">
+                    </div>
+                </div>
+                <div id="right">
+                    <p id="ID">ID: <?php echo ($row["id"])?></p>
+                    <h1 id="hersteller">Hersteller: <?php echo ($row["hersteller"])?></h1>
+                    <h2 id="material">Material: <?php echo ($row["material"])?></h2>
+                    <?php echo ('<h3 id="farbe">Farbe: <nobr><span class="colordot" style="background-color:'.$row['farbe'].'"></span>'.$row['farbe'].'</nobr></h3>') ?>
+                    <h3 id="durchmesser">Durchmesser: <?php echo ($row["dicke"])?>mm</h3>
+                    <h3 id="preis">Preis: <?php echo ($row["price"])?>€</h3>
+                    <h3 id="gewicht">Gewicht: <?php echo ($row["gewicht"])?>g</h3>
+                    <h3 id="besitzer">Besitzer: <?php echo ($row["besitzer"])?></h3>
+                    <h3 id="anzahl">Anzahl Rollen: <?php echo ($row["anzahl"])?></h3>
+                    <h2 id="printsettings">Druckeinstellungen:</h2>
+                    <h3 id="bedtemp"><span class="material-symbols-outlined">heat</span> <?php echo ($row["bedtemp"])?>°C</h3>
+                    <h3 id="nozzletemp"><span class="material-symbols-outlined">arrow_downward</span> <?php echo ($row["nozzletemp"])?>°C</h3>
+                    <h2 id="extras">Infos:</h2>
+                    <p id="additional_info">
+                        <?php 
+                        if($row["additionalinfo"]){
+                            echo ($row["additionalinfo"]);
+                        }
+                        else{
+                            echo "---";
+                        }
+                        ?>
+                    </p>
+                    <div id="buttons">
+                        <button id="edit">bearbeiten</button>
+                        <button id="deaktivieren">deaktivieren</button>
+                    </div>
+                </div>
+            </div>
+        <?php
+            } else {
+                echo "<p>Keine Ergebnisse für ID: " . htmlspecialchars($id) . " gefunden.</p>";
             }
 
             // Close the connection
             $stmt->close();
             $db->close();
         ?>
-        <div id="page">
-            <div id="left">
-                <div id="benchyImg" class="image">
-                    <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>" alt="">
-                </div>
-                <div id="SpoolImg" class="image">
-                    <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>" alt="">
-                </div>
-            </div>
-            <div id="right">
-                <p id="ID">ID: <?php echo ($row["id"])?></p>
-                <h1 id="hersteller">Hersteller: <?php echo ($row["hersteller"])?></h1>
-                <h2 id="material">Material: <?php echo ($row["material"])?></h2>
-                <?php echo ('<h3 id="farbe">Farbe: <nobr><span class="colordot" style="background-color:'.$row['farbe'].'"></span>'.$row['farbe'].'</nobr></h3>') ?>
-                <h3 id="durchmesser">Durchmesser: <?php echo ($row["dicke"])?>mm</h3>
-                <h3 id="preis">Preis: <?php echo ($row["price"])?>€</h3>
-                <h3 id="gewicht">Gewicht: <?php echo ($row["gewicht"])?>g</h3>
-                <h3 id="besitzer">Besitzer: <?php echo ($row["besitzer"])?></h3>
-                <h3 id="anzahl">Anzahl Rollen: <?php echo ($row["anzahl"])?></h3>
-                <h2 id="printsettings">Druckeinstellungen:</h2>
-                <h3 id="bedtemp"><span class="material-symbols-outlined">heat</span> <?php echo ($row["bedtemp"])?>°C</h3>
-                <h3 id="nozzletemp"><span class="material-symbols-outlined">arrow_downward</span> <?php echo ($row["nozzletemp"])?>°C</h3>
-                <h2 id="extras">Infos:</h2>
-                <p id="additional_info">
-                    <?php 
-                    if($row["additionalinfo"]){
-                        echo ($row["additionalinfo"]);
-                    }
-                    else{
-                        echo "---";
-                    }
-                    ?>
-                </p>
-                <div id="buttons">
-                    <button id="edit">bearbeiten</button>
-                    <button id="deaktivieren">deaktivieren</button>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 <footer id="footer" class="center">

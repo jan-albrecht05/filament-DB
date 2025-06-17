@@ -10,7 +10,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [x] Heading.js
     - [x] different modes (Table-/Grid-View)
     - [x] "Hinzufügen"-Button
-    - [ ] Sort by: Farbe, Material, Dicke (Header mit Buttons)
+    - [x] Sort by: Farbe, Material, Dicke (Header mit Buttons)
     - [x] Button ergänzen
     - [ ] last viewed Filaments anzeigen/vorschlagen
     - [x] Links to filament page
@@ -63,13 +63,16 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 ### index.php:
 - [ ] mit Anmeldung: Anzeige aller Daten
 - [ ] ohne Anmeldung: Anzeige aller [public]-Daten, normale Sortierung nach ID
-- [ ] Andere Sortierung nach Hersteller, Material, Farbe, Durchmesser, Preis, Gewicht, Besitzer, Anzahl (aufsteigend, absteigend)
+- [x] Andere Sortierung nach Hersteller, Material, Farbe, Durchmesser, Preis, Gewicht, Besitzer, Anzahl (aufsteigend, absteigend)
 
 ### Suche.php:
 - [ ] Suche in DB nach eingegebener value
 - [ ] ohne Anmeldung: nur [public]-Daten
 - [ ] mit Anmeldung: alle Daten
 - [ ] Sortierungsmöglichkeiten wie in index.php
+
+### add.php
+- [ ] Weiterleitung bei positivem Hinzufügen
 
 ### Anzeige in Liste/Grid:
 - [x] bei Click auf Item => get _id_ => a href="/pages/filament.php?view=_id_"

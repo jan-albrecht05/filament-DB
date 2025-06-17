@@ -34,6 +34,7 @@
     height: 100%;
     object-fit: cover;
     border-style: none;
+    background-color: var(--bg-highlight-color);
 }
 #spool{
     display: none !important;

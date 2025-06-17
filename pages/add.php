@@ -57,7 +57,7 @@
                     <input type="radio" id="diameter-1.75" name="diameter" value="1.75" required>
                     <label id="diameter1" for="diameter-1.75">1.75mm</label>
                     <input type="radio" id="diameter-2.85" name="diameter" value="2.85" required>
-                    <label for="diameter-2.85">2.85mm</label>
+                    <label id="diameter2" for="diameter-2.85">2.85mm</label>
                 </div>
             </div>
             <br>
@@ -78,7 +78,7 @@
             <label for="img2">Bild von der Spule:</label>
             <input type="file" id="img2" name="img2"><br>
             <label for="additionalinfo">Zusätzliche Infos:</label>
-            <input type="text" id="additionalinfo" name="additionalinfo" placeholder="Tips"><br>
+            <textarea id="additionalinfo" name="additionalinfo" placeholder="Tips" rows="4"></textarea><br>
             <div id="buttons">
                 <button id="savebtn" type="submit">speichern</button>
                 <button id="resetbtn" type="reset">reset</button>
@@ -106,7 +106,6 @@
                 $benchyImgName = $id . '.benchy.' . $img_extention;
                 $targetpathBenchy = "../assets/img/uploads/" . $benchyImgName;
                 if (move_uploaded_file($tmpNameBenchy, $targetpathBenchy)) {
-                    echo "Benchy image uploaded.<br>";
                 } else {
                     echo "Error - Benchy image not uploaded.<br>";
                 }
@@ -120,7 +119,6 @@
                 $spoolImgName = $id . '.spool.' . $img2_extention;
                 $targetpathSpool = "../assets/img/uploads/" . $spoolImgName;
                 if (move_uploaded_file($tmpNameSpool, $targetpathSpool)) {
-                    echo "Spool image uploaded.<br>";
                 } else {
                     echo "Error - Spool image not uploaded.<br>";
                 }
@@ -142,7 +140,8 @@
                     VALUES ('$hersteller', '$farbe', '$material', '$dicke', '$price', '$gewicht', '$besitzer', '$anzahl', '$bedtemp', '$nozzletemp', '$benchyImgName', '$spoolImgName', '$additionalinfo')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
+                header("Location: ../index.php");
+                exit;
             } else {
                 //echo "Error: " . $sql . "<br>" . $conn->error;
             }

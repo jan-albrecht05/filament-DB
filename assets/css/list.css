@@ -58,8 +58,8 @@
 .img{
     width: 5%;
     aspect-ratio: 1/1;
-    background-image: url('../icons/no-benchy.png');
     background-size: cover;
+    background-image: url('../icons/no-benchy.png');
     background-color: var(--bg-highlight-color);
     overflow: hidden;
 }
@@ -68,6 +68,7 @@ img#benchy{
     height: 100%;
     object-fit: cover;
     object-position: center;
+    background-color: var(--bg-highlight-color);
 }
 img#spool{
     display: none;

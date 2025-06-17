@@ -316,7 +316,8 @@ img{
 #add-form #diameter-radio{
     display: flex;
 }
-#add-form input{
+#add-form input,
+#add-form textarea{
     outline: none;
     margin-bottom: .5rem;
     background-color: var(--bg-highlight-color);
@@ -359,6 +360,26 @@ img{
 }
 #add-form #diameter-input #diameter1{
     width: 40%;
+}
+input[type="file"]{
+    padding: 0 !important;
+    height: 2.2rem;
+    width: 50.7% !important;
+}
+input[type="file"]::file-selector-button{
+    background-color: var(--bg-highlight-color);
+    border-color: var(--bg-highlight2-color);
+    border-width: 1px;
+    border-style: solid;
+    color: var(--font-color);
+    background-color: var(--bg-highlight2-color);
+    height:2.2rem;
+    width: 10rem;
+    margin-right: 1rem;
+}
+#add-form #additionalinfo{
+    resize:vertical;
+    min-height: 4rem;
 }
 #add-form #buttons{
     display: flex;
@@ -553,11 +574,25 @@ img{
     #add-form label{
         width: 40%;
     }
+    #add-form input[type="color"]{
+        width: 20%;
+    }
     #add-form #diameter-radio{
         display: block;
+        width: 10%;
     }
-    #add-form #diameter-input #diameter1{
-        width: 70%;
+    #add-form #diameter-input{
+        display: flex;
+    }
+    #add-form #diameter-input #diameter1,
+    #add-form #diameter-input #diameter2{
+        width: 10%;
+    }
+    input[type="file"]::file-selector-button{
+        width: 100%;
+    }
+    #add-form #buttons{
+        margin-bottom: 2rem;
     }
     #add-form #buttons button{
         width: 45%;
