@@ -26,19 +26,27 @@
                 <button id="gridbtn" class="togglebtn center" onclick="gridmode()"><span class="material-symbols-outlined">view_cozy</span></button>
             </div>
         </div>
+        <?php
+            $sort = isset($_POST['sort']) ? $_POST['sort'] : (isset($_SESSION['sort']) ? $_SESSION['sort'] : 'id');
+            $order = isset($_POST['order']) ? $_POST['order'] : (isset($_SESSION['order']) ? $_SESSION['order'] : 'ASC');
+            function sort_arrow($column, $sort, $order) {
+                if ($column !== $sort) return '';
+                return $order === 'ASC' ? ' <span class="material-symbols-outlined">keyboard_control_key</span>' : '  <span class="material-symbols-outlined">keyboard_arrow_down</span>';
+            }
+        ?>
         <div id="modecss" hidden><!--CSS for Filament-view gets inserted here via /assets/js/mode.js--></div>
-        <div class="filament" id="filamentheading">
+        <form class="filament" id="filamentheading" method="POST">
             <div class="img" style="text-align:center">Bild</div>
             <div class="box">
                 <div class="row">
-                    <button class="hersteller"><span class="text">Hersteller</span><span class="line"></span></button>
-                    <button class="material"><span class="text">Material</span><span class="line"></span></button>
+                    <button class="hersteller" type="submit" name="sort" value="hersteller"><span class="text">Hersteller<?php echo sort_arrow('hersteller', $sort, $order); ?></span><span class="line"></span></button>
+                    <button class="material" type="submit" name="sort" value="material"><span class="text">Material<?php echo sort_arrow('material', $sort, $order); ?></span><span class="line"></span></button>
                     <div class="farbe">Farbe</div>
                     <div class="durchmesser">Durchmesser</div>
                 </div>
                 <div class="row">
-                    <button class="preis"><span class="text">Preis</span><span class="line"></span></button>
-                    <button class="gewicht"><span class="text">Gewicht</span><span class="line"></span></button>
+                    <button class="preis" type="submit" name="sort" value="preis"><span class="text">Preis <?php echo sort_arrow('preis', $sort, $order); ?></span><span class="line"></span></button>
+                    <button class="gewicht" type="submit" name="sort" value="gewicht"><span class="text">Gewicht <?php echo sort_arrow('gewicht', $sort, $order); ?></span><span class="line"></span></button>
                     <div class="besitzer">Besitzer</div>
                     <div class="anzahl">Anzahl</div>
                     <div class="bedtemp">Bedtemp.</div>
@@ -46,7 +54,15 @@
                     <div class="additionalinfo"><!--PHP: Additional Info--></div>
                 </div>
             </div>
-        </div>
+            <input type="hidden" name="order" value="<?php
+                if (isset($_POST['sort']) && isset($_POST['order']) && $_POST['sort'] === $_POST['last_sort']) {
+                    echo $_POST['order'] === 'DESC' ? 'ASC' : 'DESC';
+                } else {
+                    echo 'DESC';
+                }
+            ?>">
+    <input type="hidden" name="last_sort" value="<?php echo isset($_POST['sort']) ? $_POST['sort'] : ''; ?>">
+        </form>
         <div id="filament-output">
             <!--PHP: Filament-Output--> 
             <?php
@@ -54,8 +70,13 @@
                 if(file_exists("assets/db/ff.db")){
                     $db = new SQLite3("assets/db/ff.db");
 
-                    // Query to select all data from the filament table
-                    $result = $db->query("SELECT * FROM filament");// WHERE name like *
+                    // Query to select sorted data from the filament table
+
+                    $allowed_columns = ['id','hersteller','material','farbe','dicke','price','gewicht','besitzer','anzahl','bedtemp','nozzletemp'];
+                    $sort = isset($_POST['sort']) && in_array($_POST['sort'], $allowed_columns) ? $_POST['sort'] : 'id';
+                    $order = isset($_POST['order']) && $_POST['order'] === 'ASC' ? 'ASC' : 'DESC';
+
+                    $result = $db->query("SELECT * FROM filament ORDER BY $sort $order");
 
                     // Check if there are any rows returned
                     if ($result) {

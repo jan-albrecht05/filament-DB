@@ -26,6 +26,10 @@
     height: 2rem;
     margin-top: -2px;
 }
+#filamentheading .box .row button span.material-symbols-outlined{
+    border-bottom: none !important;
+    height: 2rem;
+}
 #filamentheading .box .row button .line{
     display: block;
     width: 0%;
