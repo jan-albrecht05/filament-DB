@@ -14,13 +14,6 @@
     <script src="assets/js/mode.js" defer></script>
     <script src="assets/js/links.js" defer></script>
     <script src="assets/js/cookies.js" defer></script>
-    <style>
-        @media (min-height:500px) {
-            #footer{
-                position: absolute;
-            }
-        }
-    </style>
 </head>
 <body>
     <div id="header"><!--Code injected via assets/js/heading.js--></div>
@@ -111,10 +104,10 @@
             <button onclick="AcceptCookies()">okay</button>
         </div>
     </div>
-</body>
-<footer id="footer" class="center">
+    <footer id="footer" class="center">
     <div id="footer-content">
         <!--code gets injected by header.js-->
     </div>
 </footer>
+</body>
 </html>

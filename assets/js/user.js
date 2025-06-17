@@ -20,8 +20,8 @@ function usersettings() {
     if (userSettingsElement) {
         usersettigsopen = !usersettigsopen;
         userSettingsElement.style.transform = usersettigsopen
-            ? "translateY(0rem)"
-            : "translateY(-13rem)";
+            ? "translateY(6rem)"
+            : "translateY(-7rem)";
     }
 }
 

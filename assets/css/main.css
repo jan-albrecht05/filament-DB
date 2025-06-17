@@ -1,13 +1,17 @@
 html{
     scrollbar-width: thin;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 body{
     margin: 0;
-    height: 100%;
+    min-height: 100lvh;
     background-color: var(--bg-color);
     color: var(--font-color);
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 /*:root*/
 img{
@@ -40,14 +44,13 @@ img{
     transition: all .2s;
     background-color: var(--user-main-color);
 }
-
 #header a img{
     height: 70%;
     width: auto;
 }
 /*Suche*/
 #suche{
-    width: 100%;
+    width: 90%;
     height: 6rem;
 }
 #suche form{
@@ -98,17 +101,18 @@ img{
 }
 /*User*/
 #user{
-    width: 15%;
+    width: 8rem;
     height: 4rem;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: .5rem;
     justify-content: end;
-    padding: 7px 20px;
+    padding: 7px 40px;
     border-radius: 10px;
     border: 1px solid var(--bg-highlight-color);
     transition: all .2s;
-    user-select: none;;
+    user-select: none;
+    flex: 1;
 }
 #user:hover{
     border: 1px solid var(--font-color);
@@ -206,6 +210,7 @@ img{
     margin-top: 2rem;
     margin-inline: auto;
     width: 80%;
+    flex: 1 0 auto
 }
 #controls{
     display: flex;
@@ -435,8 +440,9 @@ img{
     background-color: var(--bg-highlight-color);
     border-top:1px solid var(--bg-highlight2-color);
     user-select: none;
-    margin-top: 2rem;
     bottom: 0;
+    position: relative;
+    flex-shrink: 0;
 }
 #footer-content{
     display: flex;
@@ -560,8 +566,15 @@ img{
         margin-left: -1rem;
     }
     /*Footer*/
+    
     #footer-content{
         width: 70%;
+    }
+    #cookies-content{
+        width: 80%;
+    }
+    #cookies button{
+        width: 25%;
     }
 }
 @media (max-width:430px) {

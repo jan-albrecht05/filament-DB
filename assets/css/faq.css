@@ -18,6 +18,7 @@ p > i{
 details{
     background-color: var(--bg-highlight-color);
     border-radius: 10px;
+    cursor: default;
 }
 summary{
     background-color: var(--bg-highlight2-color);
@@ -25,6 +26,7 @@ summary{
     border-radius: 10px;
     list-style: none;
     font-weight: bold;
+    cursor: pointer;
 }
 details p{
     margin: 1rem;
@@ -49,10 +51,14 @@ h2{
 h2:first-of-type{
     margin-top: 0;
 }
+#search-btn,
+#scanner-btn{
+    margin-top: 0;
+}
 #main{
     margin-bottom: 4rem;
 }
-p button{
+button{
     background-color: var(--bg-highlight-color);
     color: var(--font-color);
     border: 1px solid var(--font-color);
@@ -60,6 +66,7 @@ p button{
     padding: .5rem 1rem;
     margin-top: 1rem;
     transition: all .3s;
+    cursor: pointer;
 }
 p button:hover,
 #cookie-del-frage button.yes{
@@ -93,5 +100,11 @@ button.ok{
     }
     li{
         margin-left: 2rem;
+    }
+    .alert{
+        width: 70%;
+    }
+    .alert .button-container button{
+        width: 49%;
     }
 }
