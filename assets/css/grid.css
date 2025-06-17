@@ -83,10 +83,10 @@
 }
 .filament .bedtemp,
 .filament .nozzletemp{
-    color: var(--bg-highlight2-color);
+    color: var(--font-color);
 }
 .filament .material-symbols-outlined{
-    border-bottom: 2px solid var(--bg-highlight2-color);
+    border-bottom: 2px solid var(--font-color);
     margin-right: .5rem;
     font-size: 100%;
 }

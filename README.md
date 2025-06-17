@@ -32,6 +32,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - active: true/false
 - [x] Page for adding content
     - [x] CSS for Input-Fields needs a bit more work
+    - [x] Image upload and -handling
 - [x] Search Page "?query="
    - [ ] connecting to DB
 - [x] Filament-page:
@@ -40,8 +41,10 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [ ] zweite Datenbank mit Nutzerdaten
     - Username
     - Password
+    - Rolle (admin, user)
     - Profile_Picture
     - pref_Color
+    - theme
 - [x] costom color toggle
 - [x] Dark-/Light-Mode toggle
 - [x] Footer:
@@ -55,7 +58,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 ## Logic
 ### Header:
 - [ ] ohne Anmeldung: standard
-- [ ] mit Anmeldung: Profilbild + Vorname
+- [ ] mit Anmeldung: Profilbild + Name
 
 ### index.php:
 - [ ] mit Anmeldung: Anzeige aller Daten
@@ -74,8 +77,8 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 ### filament.php
 - [x] Abfrage nach token nach "?view=" aus DB
 - [ ] bei [private]-Daten nur mit Anmeldung => Weiterleitung zur Anmeldung und zurück
-- [ ] button "bearbeiten"
-- [ ] button "deaktivieren"
+- [ ] button "bearbeiten" nur als admin
+- [ ] button "deaktivieren" nur als admin
 
 ### Klick auf Hinzufügen ohne Anmeldung:
 - [ ] Weiterleitung zur Anmeldeseite, dann zu pages/add.php
@@ -83,7 +86,9 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 ### Account
 - Profilbild
 - Name, Vorname
+- Rolle
+- "meine Filamente"
 
 ## Hosting:
 Apache Webserver?
-infinityffree.com?
+infinityfree.com?
