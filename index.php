@@ -127,7 +127,7 @@
     </div>
     <footer id="footer" class="center">
     <div id="footer-content">
-        <!--code gets injected by header.js-->
+        <!--code gets injected by footer.js-->
     </div>
 </footer>
 </body>

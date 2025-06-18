@@ -13,7 +13,7 @@
     <script src="../assets/js/footer.js"></script>
     <script>
         window.onload = () =>{
-            footer()
+            footer();
         }
     </script>
     <style>
@@ -28,6 +28,19 @@
             let color = localStorage.getItem('user-main-color');
             if (color) {
                 document.documentElement.style.setProperty('--user-main-color', color);
+            }
+                let theme = localStorage.getItem('user-theme');
+                if (theme == 'dark'){
+                    setDarkTheme();
+                }
+                else{
+                    setLightTheme();
+                }
+            function setDarkTheme() {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            function setLightTheme() {
+                document.documentElement.setAttribute('data-theme', 'light');
             }
         })
     </script>
@@ -51,7 +64,7 @@
 </body>
 <footer id="footer" class="center">
     <div id="footer-content">
-        <!--code gets injected by header.js-->
+        <!--code gets injected by footer.js-->
     </div>
 </footer>
 </html>
