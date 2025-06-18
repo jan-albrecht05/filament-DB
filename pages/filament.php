@@ -20,10 +20,8 @@
         <?php
             // Database connection
             $db = new SQLite3("../assets/db/ff.db");
-
             // Get the ID from the URL
             $id = htmlspecialchars($_GET['id']);
-
             // Prepare and execute the SQL statement
             $stmt = $db->prepare("SELECT * FROM filament WHERE id = :id");
             $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
@@ -73,18 +71,17 @@
             </div>
         <?php
             } else {
-                echo "<p>Keine Ergebnisse für ID: " . htmlspecialchars($id) . " gefunden.</p>";
+                echo "<p>Keine Ergebnisse für ID #" . htmlspecialchars($id) . " gefunden.</p>";
             }
-
             // Close the connection
             $stmt->close();
             $db->close();
         ?>
     </div>
+    <footer id="footer" class="center">
+        <div id="footer-content">
+            <!--code gets injected by footer.js-->
+        </div>
+    </footer>
 </body>
-<footer id="footer" class="center">
-    <div id="footer-content">
-        <!--code gets injected by footer.js-->
-    </div>
-</footer>
 </html>
