@@ -5,14 +5,13 @@
 If you're a better programmer with PHP than I am, (a total noob) please help me with this project!
 
 ## To-Do:
-- [ ] Homepage:
+- [x] Homepage:
     - [x] Text-input
     - [x] Heading.js
     - [x] different modes (Table-/Grid-View)
     - [x] "Hinzufügen"-Button
     - [x] Sort by: Farbe, Material, Dicke (Header mit Buttons)
     - [x] Button ergänzen
-    - [ ] last viewed Filaments anzeigen/vorschlagen
     - [x] Links to filament page
     - [x] QR-Scanner
 - [x] Datenbank aus:
@@ -72,7 +71,18 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [ ] Sortierungsmöglichkeiten wie in index.php
 
 ### add.php
+- [ ] check for login-session
+    if (!session) -> login.html?redirect=add.php
 - [ ] Weiterleitung bei positivem Hinzufügen
+- [ ] Fehlermeldungen abfangen
+- [ ] Dateiformat + Größen checken
+
+### login.html
+- [ ] login mit Benutzerdaten möglich machen
+- [ ] ?redirect= auslesen und nach login weiterleiten
+
+### Security
+- [ ] Nutzerdaten (PW!) verschlüsseln 
 
 ### Anzeige in Liste/Grid:
 - [x] bei Click auf Item => get _id_ => a href="/pages/filament.php?view=_id_"
@@ -80,11 +90,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 ### filament.php
 - [x] Abfrage nach token nach "?view=" aus DB
 - [ ] bei [private]-Daten nur mit Anmeldung => Weiterleitung zur Anmeldung und zurück
-- [ ] button "bearbeiten" nur als admin
-- [ ] button "deaktivieren" nur als admin
-
-### Klick auf Hinzufügen ohne Anmeldung:
-- [ ] Weiterleitung zur Anmeldeseite, dann zu pages/add.php
+- [ ] buttons "bearbeiten" und "deaktivieren" nur als admin
 
 ### Account
 - Profilbild
