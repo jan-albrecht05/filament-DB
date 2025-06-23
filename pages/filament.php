@@ -33,10 +33,10 @@
             <div id="page">
                 <div id="left">
                     <div id="benchyImg" class="image">
-                        <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>" alt="">
+                        <img id="benchy" src="../assets/img/uploads/<?php echo htmlspecialchars($row['benchyImg']); ?>" onerror="this.onerror=null; this.src='../assets/icons/no-benchy.png';" alt="">
                     </div>
                     <div id="SpoolImg" class="image">
-                        <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>" alt="">
+                        <img id="spool" src="../assets/img/uploads/<?php echo htmlspecialchars($row['spoolImg']); ?>" onerror="this.onerror=null; this.src='../assets/icons/no-spool.png';" alt="">
                     </div>
                 </div>
                 <div id="right">

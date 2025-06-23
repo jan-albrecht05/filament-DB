@@ -17,8 +17,11 @@
 .image:hover{
     background-color: var(--bg-highlight2-color);
 }
+.image:hover img{
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
 #benchyImg{
-    background-image: url('../../assets/icons/no-benchy.png');
     overflow: hidden;
 }
 #benchyImg img,
@@ -27,7 +30,6 @@
     object-fit: cover;
 }
 #SpoolImg{
-    background-image: url('../../assets/icons/no-spool.png');
     overflow: hidden;
 }
 
