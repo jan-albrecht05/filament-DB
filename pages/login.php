@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             // Optional: Validate the redirect target to prevent open redirects
             $redirect = filter_var($_POST['redirect'], FILTER_SANITIZE_URL);
             if (strpos($redirect, '/') === 0 || strpos($redirect, '.') === 0) {
-                header("Location: /pages" . $redirect);
+                header("Location: " . $redirect);
             } else {
                 header("Location: ../index.php");
             }
