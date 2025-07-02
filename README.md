@@ -66,14 +66,14 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [x] mit Anmeldung: Profilbild + Name
 
 ### index.php:
-- [ ] mit Anmeldung: Anzeige aller Daten
-- [ ] ohne Anmeldung: Anzeige aller [public]-Daten, normale Sortierung nach ID
+- [x] mit Anmeldung: Anzeige aller Daten
+- [x] ohne Anmeldung: Anzeige aller [public]-Daten, normale Sortierung nach ID
 - [x] Andere Sortierung nach Hersteller, Material, Farbe, Durchmesser, Preis, Gewicht, Besitzer, Anzahl (aufsteigend, absteigend)
 
 ### Suche.php:
 - [x] Suche in DB nach eingegebener value
-- [ ] ohne Anmeldung: nur [public]-Daten
-- [ ] mit Anmeldung: alle Daten
+- [x] ohne Anmeldung: nur [public]-Daten
+- [x] mit Anmeldung: alle Daten
 - [x] Sortierungsmöglichkeiten wie in index.php
 
 ### add.php
@@ -85,7 +85,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 
 ### login.html
 - [x] login mit Benutzerdaten möglich machen
-- [ ] ?redirect= auslesen und nach login weiterleiten
+- [x] ?redirect= auslesen und nach login weiterleiten
 
 ### Security
 - [x] Nutzerdaten (PW!) verschlüsseln 

@@ -27,7 +27,13 @@
     <div id="user-settings"><!--Code injected via assets/js/user.js--></div>
     <div id="main">
         <div id="controls">
-            <button id="addbtn" onclick="location = 'pages/add.php'">Hinzufügen</button>
+            <?php 
+            if (isset($_SESSION['rolle']) ? "admin" : "user" === "admin") {
+                echo '<button id="addbtn" onclick="location=\'pages/add.php\'">Hinzufügen</button>';
+            } else {
+            echo '<span></span>';
+            }
+            ?>
             <div id="toggleswitch">
                 <button id="listbtn" class="togglebtn active center" onclick="listmode()"><span class="material-symbols-outlined">toc</span></button>
                 <button id="gridbtn" class="togglebtn center" onclick="gridmode()"><span class="material-symbols-outlined">view_cozy</span></button>
@@ -83,7 +89,14 @@
                     $sort = isset($_POST['sort']) && in_array($_POST['sort'], $allowed_columns) ? $_POST['sort'] : 'id';
                     $order = isset($_POST['order']) && $_POST['order'] === 'ASC' ? 'ASC' : 'DESC';
 
-                    $result = $db->query("SELECT * FROM filament ORDER BY $sort $order");
+                    // Only show Homburgschule filaments if not logged in
+                    if (!isset($_SESSION['user_id'])) {
+                        $query = "SELECT * FROM filament WHERE besitzer = 'Homburgschule' ORDER BY $sort $order";
+                    } else {
+                        $query = "SELECT * FROM filament ORDER BY $sort $order";
+                    }
+
+                    $result = $db->query($query);
 
                     // Check if there are any rows returned
                     if ($result) {

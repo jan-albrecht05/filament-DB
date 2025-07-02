@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
@@ -12,6 +15,13 @@
     <script src="../assets/js/user.js" defer></script>
 </head>
 <body>
+    <?php
+    // Check if the user is logged in and has admin privileges
+    if (!isset($_SESSION['rolle']) || $_SESSION['rolle'] !== 'admin') {
+        header("Location: login.php?redirect=admin-panel.php");
+        exit;
+    }
+    ?>
     <div id="header">
         <div id="inner-header">
             <a id="logo" href="../index.php" class="center">

@@ -48,7 +48,6 @@ function heading(){
 
     if (loggedInUser) {
         document.getElementById('user-name').textContent = "Hallo " + loggedInUser;
-        //document.getElementById('login-button').innerHTML = "Logout <span class='material-symbols-outlined'>logout</span>";
         if (loggedInUserImg !== "null") {
             document.getElementById('user-profile-img').innerHTML = "<img src='" + userimglink + "assets/img/uploads/users/" + loggedInUserImg + "' alt=''>";
         } else {

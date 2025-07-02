@@ -59,12 +59,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $result = $stmt->execute()->fetchArray(SQLITE3_ASSOC);
 
     if ($result && password_verify($password, $result['password'])) {
-        // Login successful
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['username'] = $result['username'];
         $_SESSION['rolle'] = $result['rolle'];
         $_SESSION['profile_picture'] = $result['profile_picture'];
-        header("Location: ../index.php");
+
+        // Handle redirect
+        if (!empty($_POST['redirect'])) {
+            // Optional: Validate the redirect target to prevent open redirects
+            $redirect = filter_var($_POST['redirect'], FILTER_SANITIZE_URL);
+            if (strpos($redirect, '/') === 0 || strpos($redirect, '.') === 0) {
+                header("Location: /pages" . $redirect);
+            } else {
+                header("Location: ../index.php");
+            }
+        } else {
+            header("Location: index.php");
+        }
         exit;
     } else {
         $login_error = "Benutzername oder Passwort falsch!";
@@ -86,6 +97,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                     <?php if (isset($login_error)) echo "<div style='color:red;'>$login_error</div>"; ?>
                 </div>
             </div>
+            <?php if (isset($_GET['redirect'])): ?>
+                <input type="hidden" name="redirect" value="<?php echo htmlspecialchars($_GET['redirect=']); ?>">
+            <?php endif; ?>
             <button type="submit" name="login" id="login-button" class="center">Login<span class='material-symbols-outlined'>login</span></button>
         </form>
     </div>

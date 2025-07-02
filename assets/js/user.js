@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     checkColor();
     footer();
     checkTheme();
-    localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
     if(loggedInUser) {
         document.getElementById('login-button').innerHTML = "Logout <span class='material-symbols-outlined'>logout</span>";
     }
+    localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
 });
 
 // Function to handle user settings toggle

@@ -92,10 +92,9 @@ button#add-user:hover{
     padding-left: .5rem;
     margin-bottom: 1rem;
 }
-.popop form input:focus,
-.popop form input:active{
-    outline: none;
+input:focus{
     border-color: var(--user-main-color);
+    outline: none;
 }
 .popop form #role{
     width: 25%;
