@@ -58,7 +58,7 @@
             echo '    </button>';
             echo '    <form method="post" style="display:inline;" onsubmit="return confirm(\'Diesen Benutzer wirklich löschen?\');">';
             echo '      <input type="hidden" name="delete_user_id" value="' . htmlspecialchars($user['id']) . '">';
-            echo '      <button type="submit" name="delete_user">';
+            echo '      <button id="delete" type="submit" name="delete_user">';
             echo '        <span class="material-symbols-outlined">delete</span>';
             echo '      </button>';
             echo '    </form>';
@@ -86,7 +86,7 @@
             </form>
     </div>
     <?php
-    $allowedimgtypes = array("png", "jpeg", "jpg", "ico");
+    $allowedimgtypes = array("png", "jpeg", "jpg", "JPG", "ico");
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_user'])) {
         $db = new SQLite3("../assets/db/users.db");
         $username = trim($_POST['username']);

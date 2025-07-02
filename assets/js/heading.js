@@ -25,6 +25,7 @@ function heading(){
         logolink = "#";
         imglink = "";
         suche = "";
+        userimglink = "";
     }
     else{
         //if homepage is false
@@ -42,17 +43,38 @@ function heading(){
                     '<button id="search-btn" type="submit" class="center"><span class="material-symbols-outlined center">search</span></button>'+
                     '</form><button id="scanner-btn" onclick="ToScanner()" class="center"><span class="material-symbols-outlined center">qr_code_scanner</span></button>'+
                     '</div><div id="user" class="center">'+
-                '<div id="user-name">Hallo <i>Gast</i></div><div id="user-profile-img"><img src="'+
-                userimglink+'assets/icons/user.png" title="Gast" alt="Gast"></div></div></div>';
+                '<div id="user-name"></div><div id="user-profile-img"></div></div></div>';
     document.getElementById("header").innerHTML = heading;
 
+    if (loggedInUser) {
+        document.getElementById('user-name').textContent = "Hallo " + loggedInUser;
+        //document.getElementById('login-button').innerHTML = "Logout <span class='material-symbols-outlined'>logout</span>";
+        if (loggedInUserImg !== "null") {
+            document.getElementById('user-profile-img').innerHTML = "<img src='" + userimglink + "assets/img/uploads/users/" + loggedInUserImg + "' alt=''>";
+        } else {
+            document.getElementById('user-profile-img').innerHTML = "<img src='" + userimglink + "assets/icons/user.png' alt=''>";
+        }
+    }else{
+        document.getElementById('user-name').textContent = "Hallo Gast";
+        document.getElementById('user-profile-img').innerHTML = "<img src='" + userimglink + "assets/icons/user.png' alt=''>";
+
+    }
 }
 function login() {
     if (homepage){
-        window.location.href = "pages/login.html";
+        if(loggedInUser !== null){
+            window.location.href = "pages/logout.php";
+        }else{
+            window.location.href = "pages/login.php";
+        }
     }
     else{
-        window.location.href = "../pages/login.html";
+        if(loggedInUser){
+            window.location.href = "../pages/logout.php";
+        }
+        else{
+            window.location.href = "../pages/login.php";
+        }
     }
 };
 function ToScanner(){

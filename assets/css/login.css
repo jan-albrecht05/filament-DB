@@ -18,6 +18,10 @@ label{
     font-size: 120%;
     margin-left: 4.5%;
 }
+.pass-alert{
+    margin-left: 4.5%;
+    margin-top: .5rem;
+}
 input{
     display: block;
     width: 90%;

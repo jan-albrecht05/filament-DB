@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <?php
+    session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filament DB  - Suche nach "<?php echo htmlspecialchars($_GET['query']); ?>"</title>
@@ -12,6 +15,10 @@
     <script src="../assets/js/user.js" defer></script>
     <script src="../assets/js/footer.js" defer></script>
     <script src="../assets/js/mode.js" defer></script>
+    <script>
+    let loggedInUser = <?php echo isset($_SESSION['username']) ? json_encode($_SESSION['username']) : 'null'; ?>;
+    let loggedInUserImg = <?php echo isset($_SESSION['profile_picture']) && $_SESSION['profile_picture'] ? json_encode($_SESSION['profile_picture']) : 'null'; ?>;
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll("#filament-output .filament").forEach(function(item) {

@@ -45,7 +45,11 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - pref_Color
     - theme
 - [ ] admin-panel
-- [ ] user page
+    - [x] Add-Button
+    - [x] Auflisten der User
+    - [ ] Knopf zum bearbeiten
+    - [x] Knopf zu Löschen
+- [ ] user page?
 - [x] costom color toggle
 - [x] Dark-/Light-Mode toggle
 - [x] Footer:
@@ -58,8 +62,8 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 
 ## Logic
 ### Header:
-- [ ] ohne Anmeldung: standard
-- [ ] mit Anmeldung: Profilbild + Name
+- [x] ohne Anmeldung: standard
+- [x] mit Anmeldung: Profilbild + Name
 
 ### index.php:
 - [ ] mit Anmeldung: Anzeige aller Daten
@@ -67,10 +71,10 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [x] Andere Sortierung nach Hersteller, Material, Farbe, Durchmesser, Preis, Gewicht, Besitzer, Anzahl (aufsteigend, absteigend)
 
 ### Suche.php:
-- [ ] Suche in DB nach eingegebener value
+- [x] Suche in DB nach eingegebener value
 - [ ] ohne Anmeldung: nur [public]-Daten
 - [ ] mit Anmeldung: alle Daten
-- [ ] Sortierungsmöglichkeiten wie in index.php
+- [x] Sortierungsmöglichkeiten wie in index.php
 
 ### add.php
 - [ ] check for login-session
@@ -80,11 +84,11 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [ ] Dateiformat + Größen checken
 
 ### login.html
-- [ ] login mit Benutzerdaten möglich machen
+- [x] login mit Benutzerdaten möglich machen
 - [ ] ?redirect= auslesen und nach login weiterleiten
 
 ### Security
-- [ ] Nutzerdaten (PW!) verschlüsseln 
+- [x] Nutzerdaten (PW!) verschlüsseln 
 
 ### Anzeige in Liste/Grid:
 - [x] bei Click auf Item => get _id_ => a href="/pages/filament.php?view=_id_"

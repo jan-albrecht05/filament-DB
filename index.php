@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <?php
+    session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filament DB</title>
@@ -8,12 +11,16 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/root.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
-    <script src="assets/js/heading.js"></script>
     <script src="assets/js/user.js" defer></script>
     <script src="assets/js/footer.js" defer></script>
     <script src="assets/js/mode.js" defer></script>
     <script src="assets/js/links.js" defer></script>
     <script src="assets/js/cookies.js" defer></script>
+    <script>
+        let loggedInUser = <?php echo isset($_SESSION['username']) ? json_encode($_SESSION['username']) : 'null'; ?>;
+        let loggedInUserImg = <?php echo isset($_SESSION['profile_picture']) ? json_encode($_SESSION['profile_picture']) : 'null'; ?>;
+    </script>
+    <script src="assets/js/heading.js"></script>
 </head>
 <body>
     <div id="header"><!--Code injected via assets/js/heading.js--></div>

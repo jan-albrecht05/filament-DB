@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     footer();
     checkTheme();
     localStorage.getItem("mode") == "grid" ? gridmode() : listmode();
+    if(loggedInUser) {
+        document.getElementById('login-button').innerHTML = "Logout <span class='material-symbols-outlined'>logout</span>";
+    }
 });
 
 // Function to handle user settings toggle
@@ -21,7 +24,7 @@ function usersettings() {
         usersettigsopen = !usersettigsopen;
         userSettingsElement.style.transform = usersettigsopen
             ? "translateY(6rem)"
-            : "translateY(-7rem)";
+            : "translateY(-13rem)";
     }
 }
 
