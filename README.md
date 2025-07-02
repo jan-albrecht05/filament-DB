@@ -37,13 +37,15 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [x] Filament-page:
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
-- [ ] zweite Datenbank mit Nutzerdaten
+- [x] zweite Datenbank mit Nutzerdaten
     - Username
     - Password
     - Rolle (admin, user)
     - Profile_Picture
     - pref_Color
     - theme
+- [ ] admin-panel
+- [ ] user page
 - [x] costom color toggle
 - [x] Dark-/Light-Mode toggle
 - [x] Footer:

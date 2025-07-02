@@ -1,0 +1,127 @@
+.user{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--bg-highlight-color);
+    transition: all .3s;
+}
+.user:nth-last-child(1){
+    border-bottom: none;
+}
+.user:hover{
+    background-color: var(--bg-highlight-color);
+}
+.user #user-icon{
+    height: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+#user-heading:hover{
+    background-color: var(--bg-color);
+}
+#user-heading h2{
+    font-size: 180% !important;
+    cursor:default;
+}
+.user span{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    font-size: 150%;
+}
+.user button{
+    background-color: transparent;
+    height: 2rem;
+    border: none;
+    color: var(--font-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+button#delete:hover span.material-symbols-outlined{
+    color: red;
+}
+button#add-user{
+    margin-top: 2rem;
+    width: max-content;
+    height: 2.5rem;
+    padding: .5rem;
+    background-color: var(--bg-highlight2-color);
+    color: var(--font-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+button#add-user:hover{
+    filter: drop-shadow(0px 5px 5px var(--shadow));
+}
+.popup{
+    position: absolute;
+    z-index: 15;
+    width: 70%;
+    height: auto;
+    margin-top: 10%;
+    margin-inline: 15%;
+    padding: 1rem;
+    background-color: var(--bg-highlight-color);
+    border-radius: 10px;
+    border: 1px solid var(--bg-highlight2-color);
+    display: none;
+}
+.popup form{
+    width: 100%;
+}
+.popup form label{
+    min-width: 10%;
+    display: inline-block;
+}
+.popup form input,
+.popup form select{
+    width: 20%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid var(--bg-highlight2-color);
+    background-color: var(--bg-highlight-color);
+    color: var(--font-color);
+    padding-left: .5rem;
+    margin-bottom: 1rem;
+}
+.popop form input:focus,
+.popop form input:active{
+    outline: none;
+    border-color: var(--user-main-color);
+}
+.popop form #role{
+    width: 25%;
+    padding: 0rem .5rem;
+    display: inline-block;
+}
+.popoup form input[type="file"]{
+    width: 12% !important;
+    display: inline-block;
+    padding: 0 !important;
+}
+.popup form button{
+    width: 15%;
+    height: 2.5rem;
+    background-color: var(--bg-highlight2-color);
+    color: var(--font-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.popup form button:hover{
+    filter: drop-shadow(0px 5px 5px var(--shadow));
+}
+.popup form button#close-popup{
+    background-color: transparent;
+    color: var(--font-color);
+    border: 1px solid var(--bg-highlight2-color);
+}

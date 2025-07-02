@@ -365,7 +365,7 @@ img{
 #add-form #diameter-input #diameter1{
     width: 40%;
 }
-input[type="file"]{
+#add-form input[type="file"]{
     padding: 0 !important;
     height: 2.2rem;
     width: 50.7% !important;
