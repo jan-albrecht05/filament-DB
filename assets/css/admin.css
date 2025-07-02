@@ -125,3 +125,30 @@ button#add-user:hover{
     color: var(--font-color);
     border: 1px solid var(--bg-highlight2-color);
 }
+
+@media (max-width: 600px){
+    button#add-user{
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    #user-heading{
+        display:none !important;
+    }
+    .user{
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        padding: .5rem 1rem;
+    }
+    .user span{
+        font-size: 120%;
+    }
+    #user-icon{
+        height: 3rem !important;
+        aspect-ratio: 1/1;
+    }
+    #user-setting button{
+        height: 5rem;
+    }
+}
