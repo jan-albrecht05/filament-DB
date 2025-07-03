@@ -84,7 +84,7 @@
     if (!session) -> login.html?redirect=add.php
 - [ ] Weiterleitung bei positivem Hinzufügen
 - [ ] Fehlermeldungen abfangen
-- [ ] Dateiformat + Größen checken
+- [ ] Dateigrößen checken
 
 ### login.html
 - [x] login mit Benutzerdaten möglich machen

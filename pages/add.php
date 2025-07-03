@@ -96,7 +96,7 @@
         </form>
         
         <?php
-        $allowedimgtypes = array("png", "jpeg", "jpg", "ico");
+        $allowedimgtypes = array("png", "jpeg", "jpg", "JPG", "JPEG", "PNG", "ICO", "ico");
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hersteller = $_POST['vendor'];
             $farbe = $_POST['color'];
