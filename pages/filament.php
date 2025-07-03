@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filament DB  - #<?php echo htmlspecialchars($_GET['id']); ?></title>
@@ -12,6 +15,10 @@
     <script src="../assets/js/heading.js"></script>
     <script src="../assets/js/user.js" defer></script>
     <script src="../assets/js/footer.js" defer></script>
+    <script>
+        let loggedInUser = <?php echo isset($_SESSION['username']) ? json_encode($_SESSION['username']) : 'null'; ?>;
+        let loggedInUserImg = <?php echo isset($_SESSION['profile_picture']) ? json_encode($_SESSION['profile_picture']) : 'null'; ?>;
+    </script>
 </head>
 <body>
     <div id="header"><!--Code injected via assets/js/heading.js--></div>
@@ -30,6 +37,12 @@
             // Check if the record exists
             if ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         ?>
+                <?php
+                //check if filament is inactive (spool emty)
+                    if ($row['active'] == 0) {
+                        echo '<div id="inactive-banner"> <span class="material-symbols-outlined">info</span><span>Dieser Eintrag ist inaktiv!</span></div>';
+                        }
+                ?>
             <div id="page">
                 <div id="left">
                     <div id="benchyImg" class="image">
@@ -63,10 +76,15 @@
                         }
                         ?>
                     </p>
-                    <div id="buttons">
-                        <button id="edit">bearbeiten</button>
-                        <button id="deaktivieren">deaktivieren</button>
-                    </div>
+                    <?php 
+                    if (isset($_SESSION['rolle']) ? "admin" : "user" === "admin") {
+                        echo '
+                            <form id="buttons" method=post>
+                                <button id="edit">bearbeiten</button>
+                                <button id="deaktivieren">deaktivieren</button>
+                            </form>';
+                    }
+                    ?>
                 </div>
             </div>
         <?php

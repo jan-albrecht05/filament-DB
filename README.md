@@ -99,8 +99,8 @@
 ### filament.php
 - [x] Abfrage nach token nach "?view=" aus DB
 - [ ] bei [private]-Daten nur mit Anmeldung => Weiterleitung zur Anmeldung und zurück
-- [ ] buttons "bearbeiten" und "deaktivieren" nur als admin
-- [ ] Hinweis wenn inaktiv
+- [x] buttons "bearbeiten" und "deaktivieren" nur als admin
+- [x] Hinweis wenn inaktiv
 
 ### Account
 - Profilbild
