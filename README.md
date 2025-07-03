@@ -1,8 +1,9 @@
 # filament-DB
 ## for all of our 3D-printing-filament
-# Feel free to contribute!
 <img src="/assets/img/overview.png" alt="">
-If you're a better programmer with PHP than I am, (a total noob) please help me with this project!
+
+# Apretty nice looking DB with User Accounts
+### Feel free to contribute!
 
 ## To-Do:
 - [x] Homepage:
@@ -33,7 +34,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
     - [x] CSS for Input-Fields needs a bit more work
     - [x] Image upload and -handling
 - [x] Search Page "?query="
-   - [ ] connecting to DB
+   - [x] connecting to DB
 - [x] Filament-page:
     - Anzeige der DB-Daten
     - PpG (Preis pro Gramm) berechnen
