@@ -2,7 +2,7 @@
 ## for all of our 3D-printing-filament
 <img src="/assets/img/overview.png" alt="">
 
-# Apretty nice looking DB with User Accounts
+# A pretty nice looking DB with User Accounts
 ### Feel free to contribute!
 
 ## To-Do:
