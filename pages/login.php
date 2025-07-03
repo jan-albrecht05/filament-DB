@@ -66,15 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
         // Handle redirect
         if (!empty($_POST['redirect'])) {
-            // Optional: Validate the redirect target to prevent open redirects
-            $redirect = filter_var($_POST['redirect'], FILTER_SANITIZE_URL);
-            if (strpos($redirect, '/') === 0 || strpos($redirect, '.') === 0) {
-                header("Location: " . $redirect);
-            } else {
-                header("Location: ../index.php");
-            }
+            $redirect = trim(str_replace(array("\r", "\n"), '', $_POST['redirect']));
+            header("Location: " . $redirect);
         } else {
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
         exit;
     } else {
@@ -98,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                 </div>
             </div>
             <?php if (isset($_GET['redirect'])): ?>
-                <input type="hidden" name="redirect" value="<?php echo htmlspecialchars($_GET['redirect=']); ?>">
+                <input type="hidden" name="redirect" value="<?php echo htmlspecialchars($_GET['redirect'] ?? ''); ?>">
             <?php endif; ?>
             <button type="submit" name="login" id="login-button" class="center">Login<span class='material-symbols-outlined'>login</span></button>
         </form>

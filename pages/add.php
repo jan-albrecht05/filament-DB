@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Filament</title>
@@ -20,6 +23,13 @@
     </style>
 </head>
 <body>
+     <?php
+    // Check if the user is logged in and has admin privileges
+    if (!isset($_SESSION['rolle']) || $_SESSION['rolle'] !== 'admin') {
+        header("Location: login.php?redirect=add.php");
+        exit;
+    }
+    ?>
     <?php
             $db = new SQLite3("../assets/db/ff.db");
             $result = $db->querySingle("SELECT MAX(id) FROM filament");

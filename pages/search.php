@@ -137,8 +137,9 @@
             }
             if (!$hasRows) {
                 echo "<div style='margin-top: 1rem'>Keine Ergebnisse gefunden.</div>";
-                echo "<a href='../pages/login.php?redirect=search.php?query=".$search."'>Melde dich an.</a>";
-            }
+                if (!isset($_SESSION['user_id'])) {
+                    echo "<a href='../pages/login.php?redirect=search.php?query=".$search."'>Melde dich an.</a>";
+            }}
             ?> 
         </div>
     </div>

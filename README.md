@@ -69,15 +69,17 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [x] mit Anmeldung: Anzeige aller Daten
 - [x] ohne Anmeldung: Anzeige aller [public]-Daten, normale Sortierung nach ID
 - [x] Andere Sortierung nach Hersteller, Material, Farbe, Durchmesser, Preis, Gewicht, Besitzer, Anzahl (aufsteigend, absteigend)
+- [ ] nicht-anzeigen von inaktiven Einträgen
 
 ### Suche.php:
 - [x] Suche in DB nach eingegebener value
 - [x] ohne Anmeldung: nur [public]-Daten
 - [x] mit Anmeldung: alle Daten
 - [x] Sortierungsmöglichkeiten wie in index.php
+- [ ] nicht-anzeigen von inaktiven Einträgen
 
 ### add.php
-- [ ] check for login-session
+- [x] check for login-session
     if (!session) -> login.html?redirect=add.php
 - [ ] Weiterleitung bei positivem Hinzufügen
 - [ ] Fehlermeldungen abfangen
@@ -97,6 +99,7 @@ If you're a better programmer with PHP than I am, (a total noob) please help me 
 - [x] Abfrage nach token nach "?view=" aus DB
 - [ ] bei [private]-Daten nur mit Anmeldung => Weiterleitung zur Anmeldung und zurück
 - [ ] buttons "bearbeiten" und "deaktivieren" nur als admin
+- [ ] Hinweis wenn inaktiv
 
 ### Account
 - Profilbild
