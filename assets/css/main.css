@@ -522,7 +522,7 @@ input[type="file"]::file-selector-button{
         margin-left: 0rem;
     }
 }
-@media (max-width:600px) {
+@media (max-width:650px) {
     #header{
         height: 4rem;
     }
@@ -607,7 +607,7 @@ input[type="file"]::file-selector-button{
     /*Footer*/
     
     #footer-content{
-        width: 70%;
+        width: 75%;
     }
     #cookies-content{
         width: 80%;
@@ -618,6 +618,11 @@ input[type="file"]::file-selector-button{
 }
 @media (max-width:430px) {
     #footer-content{
-        width: 90%;
+        width: 95%;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+    #githublink{
+        margin-left: .3rem;
     }
 }

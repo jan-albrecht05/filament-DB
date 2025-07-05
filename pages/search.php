@@ -18,7 +18,9 @@
     <script>
         let loggedInUser = <?php echo isset($_SESSION['username']) ? json_encode($_SESSION['username']) : 'null'; ?>;
         let loggedInUserImg = <?php echo isset($_SESSION['profile_picture']) && $_SESSION['profile_picture'] ? json_encode($_SESSION['profile_picture']) : 'null'; ?>;
+        let searchTerm = <?php echo isset($_GET['query']) ? json_encode($_GET['query']) : '""'; ?>;
     </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll("#filament-output .filament").forEach(function(item) {
@@ -84,7 +86,7 @@
 
             // Get search term
             $search = isset($_GET['query']) ? trim($_GET['query']) : '';
-            $where = [];
+            $where = ["active = 1"];
 
             if ($search !== '') {
                 $search_esc = SQLite3::escapeString($search);
@@ -99,10 +101,7 @@
                 $where[] = "besitzer = 'Homburgschule'";
             }
 
-            $where_sql = '';
-            if (count($where) > 0) {
-                $where_sql = 'WHERE ' . implode(' AND ', $where);
-            }
+            $where_sql = 'WHERE ' . implode(' AND ', $where);
 
             $query = "SELECT * FROM filament $where_sql ORDER BY $sort $order";
             $result = $db->query($query);

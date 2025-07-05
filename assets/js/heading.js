@@ -2,8 +2,12 @@ let homepage = false;
 let logolink, userimglink = "";
 window.addEventListener("load", () =>{
     heading();
+    if (typeof searchTerm !== "undefined" && searchTerm !== "" && document.getElementById("text-input")) {
+        document.getElementById("text-input").value = searchTerm;
+    }
     checkforCookies();
 });
+
 
 //checks the current path
 //if page is index.php => homepage = true

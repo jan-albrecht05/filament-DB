@@ -91,9 +91,9 @@
 
                     // Only show Homburgschule filaments if not logged in
                     if (!isset($_SESSION['user_id'])) {
-                        $query = "SELECT * FROM filament WHERE besitzer = 'Homburgschule' ORDER BY $sort $order";
+                        $query = "SELECT * FROM filament WHERE active = 1 AND besitzer = 'Homburgschule' ORDER BY $sort $order";
                     } else {
-                        $query = "SELECT * FROM filament ORDER BY $sort $order";
+                        $query = "SELECT * FROM filament WHERE active = 1 ORDER BY $sort $order";
                     }
 
                     $result = $db->query($query);
