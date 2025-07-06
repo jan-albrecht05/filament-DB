@@ -53,9 +53,11 @@ input:focus{
     }
     #login-form{
         width: 90%;
+        padding: 1rem;
     }
     input{
-        width: 95%;
+        width: 90%;
+        margin-right: 1rem;
     }
     #login-form #login-button{
         width: 95%;
