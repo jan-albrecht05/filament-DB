@@ -43,6 +43,9 @@
 button#delete:hover span.material-symbols-outlined{
     color: red;
 }
+button.edit-user-btn:hover span.material-symbols-outlined{
+    color: rgb(0, 190, 0);
+}
 button#add-user{
     margin-top: 2rem;
     width: max-content;
@@ -64,7 +67,7 @@ button#add-user:hover{
 .popup{
     position: absolute;
     z-index: 15;
-    width: 70%;
+    width: 20%;
     height: auto;
     margin-top: 10%;
     margin-inline: 15%;
@@ -73,17 +76,18 @@ button#add-user:hover{
     border-radius: 10px;
     border: 1px solid var(--bg-highlight2-color);
     display: none;
+    filter: drop-shadow(0px 5px 5px var(--shadow));
 }
 .popup form{
     width: 100%;
 }
 .popup form label{
-    min-width: 10%;
+    min-width: 25%;
     display: inline-block;
 }
 .popup form input,
 .popup form select{
-    width: 20%;
+    width: 50%;
     height: 2rem;
     border-radius: 5px;
     border: 1px solid var(--bg-highlight2-color);
@@ -107,7 +111,7 @@ input:focus{
     padding: 0 !important;
 }
 .popup form button{
-    width: 15%;
+    width: 45%;
     height: 2.5rem;
     background-color: var(--bg-highlight2-color);
     color: var(--font-color);
@@ -119,7 +123,8 @@ input:focus{
 .popup form button:hover{
     filter: drop-shadow(0px 5px 5px var(--shadow));
 }
-.popup form button#close-popup{
+.popup form button#close-popup,
+.popup form button#close-popup-edit{
     background-color: transparent;
     color: var(--font-color);
     border: 1px solid var(--bg-highlight2-color);

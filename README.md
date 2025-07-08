@@ -6,8 +6,6 @@
 ### Feel free to contribute!
 
 ## To-Do:
-- [ ] admin-panel
-    - [ ] Knopf zum bearbeiten
 - [ ] user page?
 
 ## Logic

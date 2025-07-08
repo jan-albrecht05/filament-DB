@@ -11,28 +11,16 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/root.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-    <script src="../assets/js/heading.js"></script>
     <script src="../assets/js/user.js" defer></script>
     <script src="../assets/js/footer.js" defer></script>
+    <script src="../assets/js/links2.js" defer></script>
     <script src="../assets/js/mode.js" defer></script>
+    <script src="../assets/js/heading.js"></script>
     <script>
         let loggedInUser = <?php echo isset($_SESSION['username']) ? json_encode($_SESSION['username']) : 'null'; ?>;
         let loggedInUserImg = <?php echo isset($_SESSION['profile_picture']) && $_SESSION['profile_picture'] ? json_encode($_SESSION['profile_picture']) : 'null'; ?>;
         let searchTerm = <?php echo isset($_GET['query']) ? json_encode($_GET['query']) : '""'; ?>;
     </script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll("#filament-output .filament").forEach(function(item) {
-                item.addEventListener("click", function() {
-                    const clickedElementId = this.id;
-                    if (clickedElementId != "filamentheading"){
-                        location.href = "../pages/filament.php?id=" + clickedElementId;
-                    }
-                });
-            });
-        });
-    </script>    
     <style>
         a{
             color: var(--user-main-color);
@@ -45,10 +33,10 @@
     <div id="main">
         <div id="controls">
             <?php 
-            if (isset($_SESSION['rolle']) ? "admin" : "user" === "admin") {
+            if (isset($_SESSION['rolle']) && $_SESSION['rolle'] === "admin") {
                 echo '<button id="addbtn" onclick="location=\'pages/add.php\'">Hinzufügen</button>';
             } else {
-            echo '<span></span>';
+                echo '<span></span>';
             }
             ?>
             <div id="toggleswitch">
@@ -56,7 +44,10 @@
                 <button id="gridbtn" class="togglebtn center" onclick="gridmode()"><span class="material-symbols-outlined">view_cozy</span></button>
             </div>
         </div>
-        <div id="modecss" hidden><!--CSS for Filament-view gets inserted here via /assets/js/mode.js--></div>
+        <div id="modecss" hidden>
+            <!--CSS for Filament-view gets inserted here via /assets/js/mode.js-->
+            <link rel="stylesheet" href="../assets/css/list.css">
+        </div>
         <div class="filament" id="filamentheading">
             <div class="img" style="text-align:center">Bild</div>
             <div class="box">

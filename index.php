@@ -28,10 +28,10 @@
     <div id="main">
         <div id="controls">
             <?php 
-            if (isset($_SESSION['rolle']) ? "admin" : "user" === "admin") {
+            if (isset($_SESSION['rolle']) && $_SESSION['rolle'] === "admin") {
                 echo '<button id="addbtn" onclick="location=\'pages/add.php\'">Hinzufügen</button>';
             } else {
-            echo '<span></span>';
+                echo '<span></span>';
             }
             ?>
             <div id="toggleswitch">
