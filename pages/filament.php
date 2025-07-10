@@ -101,7 +101,7 @@
                             ?>
                         </p>
                         <?php 
-                        if (isset($_SESSION['rolle']) ? "admin" : "user" === "admin") {
+                        if (isset($_SESSION['rolle']) && $_SESSION['rolle'] === "admin") {
                             $deactivateClass = ($row['active'] == 0) ? 'inactive' : '';
                             $deactivateDisabled = ($row['active'] == 0) ? 'disabled' : '';
                             echo '
