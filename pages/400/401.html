@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>401 - Unauthorized</title>
+    <link rel="icon" href="../../assets/icons/web-icon.png">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/root.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=login" />
+    <script src="../../assets/js/footer.js"></script>
+    <script>
+        window.onload = () =>{
+            footer()
+        }
+    </script>
+    <style>
+        #main{
+            font-size: 300%;
+        }
+        #zahl{
+            color: var(--user-main-color);
+        }
+        button{
+            width: 20%;
+            height: 3rem;
+            margin: 1rem;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 600 bold;
+            border: 2px solid;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        #back{
+            background-color: var(--user-main-color);
+            color: var(--font-color);
+            border-color: var(--font-color);
+        }
+        #back:hover{
+            background-color: var(--backgound-color);
+            border-color: var(--user-main-color);
+            color: var(--user-main-color);
+            filter: drop-shadow(0 0 5px var(--shadow));
+        }
+        #index{
+            background-color: var(--background-color);
+            color: var(--font-color);
+            border-color: var(--font-color);
+        }
+        #index:hover{
+            background-color: var(--background-color);
+            color: var(--user-main-color);
+            border-color: var(--user-main-color);
+            filter: drop-shadow(0 0 5px var(--shadow));
+        }
+        @media (min-height:644px) {
+            #footer{
+                position: absolute;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><div id="inner-header"><a id="logo" href="../../index.php" class="center"><img id="logoimg" src="../../assets/icons/filament-DB.png" alt="Filament-DB" title="Home"></a></div></div>
+    <div id="main">
+        <h1>Error <span id="zahl">401</span> - <br> Unauthorized</h1>
+        <button id="back" onclick="window.history.back()">zurück</button>
+    </div>
+</body>
+<footer id="footer" class="center">
+    <div id="footer-content">
+        <!--code gets injected by header.js-->
+    </div>
+</footer>
+</html>
