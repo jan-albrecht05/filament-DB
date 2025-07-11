@@ -82,12 +82,12 @@ button#add-user:hover{
     width: 100%;
 }
 .popup form label{
-    min-width: 25%;
+    min-width: 30%;
     display: inline-block;
 }
 .popup form input,
 .popup form select{
-    width: 50%;
+    width: 65%;
     height: 2rem;
     border-radius: 5px;
     border: 1px solid var(--bg-highlight2-color);
@@ -147,12 +147,32 @@ input:focus{
     }
     .user span{
         font-size: 120%;
+        height: 2rem;
     }
     #user-icon{
         height: 3rem !important;
         aspect-ratio: 1/1;
     }
     #user-setting button{
-        height: 5rem;
+        height: 2rem;
+    }
+    .popup{
+        width: 80%;
+        margin-inline: 5%;
+        margin-top: 20%;
+    }
+    .popup form label{
+        min-width: 100%;
+        display: block;
+    }
+    .popup form input,
+    .popup form select{
+        width: 90%;
+    }
+    .popoup form input[type="file"]{
+        width: 90%;
+    }
+    .popup form button{
+        width: 49%;
     }
 }
