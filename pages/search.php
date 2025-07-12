@@ -81,7 +81,7 @@
 
             if ($search !== '') {
                 $search_esc = SQLite3::escapeString($search);
-                $where[] = "(hersteller LIKE '%$search_esc%' OR material LIKE '%$search_esc%' OR farbe LIKE '%$search_esc%' OR besitzer LIKE '%$search_esc%')";
+                $where[] = "(id LIKE '%$search_esc%' OR hersteller LIKE '%$search_esc%' OR material LIKE '%$search_esc%' OR farbe LIKE '%$search_esc%' OR besitzer LIKE '%$search_esc%')";
             } else {
                 echo '<p class="error">Bitte gib einen Suchbegriff ein.</p>';
                 exit;
@@ -102,11 +102,14 @@
                 $hasRows = true;
                 echo '<div class="filament" id="'.htmlspecialchars($row['id']).'">
                             <div class="img">';
-                                if (!empty($row['benchyImg'])) {
-                                    echo '<img id="benchy" src="../assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'" alt="">';
-                                    echo '<img id="spool" src="../assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'" alt="">';
-                                }
-                            echo '</div>
+                                    if (!empty($row['benchyImg'])) {
+                                        echo '<img id="benchy" src="../assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'" style="background-image:none" alt="">';
+                                        echo '<img id="spool" src="../assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'" style="background-image:none" alt="">';
+                                    }else{
+                                        echo '<img id="benchy" src="../assets/icons/no-benchy.png" alt="">';
+                                        echo '<img id="spool" src="../assets/icons/no-spool.png" alt="">';
+                                    }
+                                echo '</div>
                             <div class="box">
                                 <div class="row">
                                     <div class="hersteller">'.htmlspecialchars($row['hersteller']).'</div>
