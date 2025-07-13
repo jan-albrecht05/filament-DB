@@ -81,7 +81,7 @@
 
             if ($search !== '') {
                 $search_esc = SQLite3::escapeString($search);
-                $where[] = "(id LIKE '%$search_esc%' OR hersteller LIKE '%$search_esc%' OR material LIKE '%$search_esc%' OR farbe LIKE '%$search_esc%' OR besitzer LIKE '%$search_esc%')";
+                $where[] = "(CAST(id AS INTEGER) = CAST('$search_esc' AS INTEGER) OR hersteller LIKE '%$search_esc%' OR material LIKE '%$search_esc%' OR farbe LIKE '%$search_esc%' OR besitzer LIKE '%$search_esc%')";
             } else {
                 echo '<p class="error">Bitte gib einen Suchbegriff ein.</p>';
                 exit;

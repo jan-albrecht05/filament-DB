@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100%;
+            height: auto;
+        }
+        #imgbox{
+            width: 30rem;
+            display: flex;
+            background-color: #26262610;
+        }
+        #bild1 {
+            width: 30rem;
+            height: auto;
+            z-index:2;
+            display: inline-block;
+        }
+        #bild2-container{
+            width: 15rem;
+            margin-left: -30rem;
+            height: auto;
+            overflow: hidden;
+            resize: horizontal;
+            border-right: 2px solid black;
+            z-index: 5;
+            background-image: url('../assets/img/uploads/23.benchy.png');
+            background-size: cover;
+            background-color: #f1f1f1;
+        }
+        #bild2-container::after{
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 1rem;
+            background-color: black;
+            content: '';
+        }
+    </style>
+</head>
+<body>
+    <div id="imgbox">
+        <img src="../assets/img/uploads/20.benchy.png" id="bild1">
+        <div id="bild2-container"></div>
+    </div>
+</body>
+</html>
