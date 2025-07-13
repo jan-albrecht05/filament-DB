@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=compare" />
     <style>
         img{
             width: 100%;
@@ -20,32 +21,72 @@
             z-index:2;
             display: inline-block;
         }
-        #bild2-container{
+        #bild2-container {
+            position: relative;
             width: 15rem;
+            min-width: 1rem;
+            max-width: 30rem;
             margin-left: -30rem;
             height: auto;
-            overflow: hidden;
-            resize: horizontal;
+            overflow: visible; /* <-- important! */
             border-right: 2px solid black;
             z-index: 5;
             background-image: url('../assets/img/uploads/23.benchy.png');
             background-size: cover;
             background-color: #f1f1f1;
         }
-        #bild2-container::after{
-            display: inline-block;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 1rem;
-            background-color: black;
-            content: '';
+        #resize-handle{
+            position: absolute;
+            top: 50%;
+            right: -1.5rem;
+            width: 3rem;
+            height: 3rem;
+            background: #222;
+            cursor: ew-resize;
+            border-radius: 1.5rem;
+            z-index: 10;
+            overflow: visible !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div id="imgbox">
         <img src="../assets/img/uploads/20.benchy.png" id="bild1">
-        <div id="bild2-container"></div>
+        <div id="bild2-container">
+            <div id="resize-handle"><span class="material-symbols-outlined">compare</span></div>
+        </div>
     </div>
+    <script>
+const container = document.getElementById('bild2-container');
+const handle = document.getElementById('resize-handle');
+let isResizing = false;
+
+handle.addEventListener('mousedown', function(e) {
+    isResizing = true;
+    document.body.style.cursor = 'ew-resize';
+    e.preventDefault();
+});
+
+document.addEventListener('mousemove', function(e) {
+    if (!isResizing) return;
+    // Calculate new width based on mouse position
+    const imgboxRect = document.getElementById('imgbox').getBoundingClientRect();
+    let newWidth = e.clientX - imgboxRect.left;
+    // Clamp width between min and max
+    newWidth = Math.max(10, Math.min(newWidth, 470)); // 5rem to 30rem in px
+    container.style.width = newWidth + 'px';
+});
+
+document.addEventListener('mouseup', function() {
+    if (isResizing) {
+        isResizing = false;
+        document.body.style.cursor = '';
+    }
+});
+</script>
 </body>
 </html>
