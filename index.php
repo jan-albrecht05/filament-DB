@@ -108,9 +108,12 @@
                                 <div class="img">';
                                     if (!empty($row['benchyImg'])) {
                                         echo '<img id="benchy" src="assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'" style="background-image:none" alt="">';
-                                        echo '<img id="spool" src="assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'" style="background-image:none" alt="">';
                                     }else{
                                         echo '<img id="benchy" src="assets/icons/no-benchy.png" alt="">';
+                                    }
+                                    if (!empty($row['spoolImg'])) {
+                                        echo '<img id="spool" src="assets/img/uploads/'.htmlspecialchars($row['spoolImg']).'" style="background-image:none" alt="">';
+                                    }else{
                                         echo '<img id="spool" src="assets/icons/no-spool.png" alt="">';
                                     }
                                 echo '</div>
