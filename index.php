@@ -58,7 +58,7 @@
                     <div class="durchmesser">Durchmesser</div>
                 </div>
                 <div class="row">
-                    <button class="preis" type="submit" name="sort" value="preis"><span class="text">Preis <?php echo sort_arrow('preis', $sort, $order); ?></span><span class="line"></span></button>
+                    <button class="preis" type="submit" name="sort" value="price"><span class="text">Preis <?php echo sort_arrow('preis', $sort, $order); ?></span><span class="line"></span></button>
                     <button class="gewicht" type="submit" name="sort" value="gewicht"><span class="text">Gewicht <?php echo sort_arrow('gewicht', $sort, $order); ?></span><span class="line"></span></button>
                     <div class="besitzer">Besitzer</div>
                     <div class="anzahl">Anzahl</div>
