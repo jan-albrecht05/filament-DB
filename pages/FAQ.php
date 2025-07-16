@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <?php
+        session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>filament DB - FAQ</title>
@@ -12,6 +15,10 @@
     <script src="../assets/js/heading.js"></script>
     <script src="../assets/js/footer.js" defer></script>
     <script src="../assets/js/user.js" defer></script>
+    <script>
+        let loggedInUser = <?php echo isset($_SESSION['username']) ? json_encode($_SESSION['username']) : 'null'; ?>;
+        let loggedInUserImg = <?php echo isset($_SESSION['profile_picture']) ? json_encode($_SESSION['profile_picture']) : 'null'; ?>;
+    </script>
     <script>
         document.addEventListener("load", () =>{
            footer()
@@ -58,34 +65,36 @@
             <div class="part">
                 <details>
                     <summary>Was ist diese Datenbank und welche Informationen speichert sie?</summary>
-                    <p class="answer">Diese Datenbank speichert die Informationen (Werte, Preise, Bilder) von 3D-Druck-Filament. <br>Die Daten sind in erster Linie für die SuS der Prinz-von-Homburg Schule und für das Lehrpersonal.</p>
+                    <p class="answer">Diese Datenbank enthält Informationen über 3D-Druck-Filamente.<br>
+                        Hierzu zählen Werte wie Hersteller, Material, Preise, Farben, Temperaturen und Bilder von einem 3DBenchy und der Spule.<br>
+                        Die Daten sind in erster Linie für die SuS der Prinz-von-Homburg-Schule und für das Lehrpersonal.</p>
                 </details>
             </div>
             <div class="part">
                 <details>
                     <summary>Welche Arten von 3D-Druck-Filamenten sind in der Datenbank enthalten?</summary>
-                    <p class="answer">Im der <i>Gast</i>-Ansicht der Datenbank sind nur Filamente der Prinz-von-Homburg-Schule einzusehen. Um weitere (private) Filamente sehen zu können, muss man als Administrator angemeldet sein.</p>
+                    <p class="answer">In der <i>Gast</i>-Ansicht der Datenbank sind nur Filamente der Prinz-von-Homburg-Schule sichtbar. Um weitere (private) Filamente sehen zu können, muss man mit seinen Benutzerdaten angemeldet sein.</p>
                 </details>
             </div>
             <div class="part">
                 <details>
                     <summary>Wie oft werden die Daten aktualisiert?</summary>
-                    <p class="answer">Die Daten der Datenbank werden unregelmäßig überprüft und bei Veränderungen aktualisiert.<br>Bei neuem Filament wird sofort nach erfolgreichem Test die Datenbank mit dem entsprechendem Beitrag erweitert.</p>
+                    <p class="answer">Die Daten der Datenbank werden unregelmäßig überprüft und bei Veränderungen aktualisiert.<br>Bei neuem Filament wird sofort nach erfolgreichem Test die Datenbank mit dem entsprechenden Beitrag erweitert.</p>
                 </details>
             </div>
         <h2>Benutzung der Datenbank</h2>
             <div class="part">
-                <details><!--Update erforderlich-->
+                <details>
                     <summary>Wie kann ich nach einem bestimmten Filament suchen?</summary>
-                    <p class="answer"><i>Die Suchfunktion steht momentan noch nicht zur Verfügung!</i><br>Hierfür stehen die Suchfunktion, die Tabellenausgabe und der QR-Code-Scanner zur Verfügung.<br>
+                    <p class="answer">Hierfür stehen die Suchfunktion, die Tabellenausgabe und der QR-Code-Scanner zur Verfügung.<br>
                     Um Einträge zu finden, gib dein Stichwort in der Suchleiste ein oder sortiere die Ansicht auf der <a href="../index.php">Startseite</a> nach deinem gesuchten Wert.<br>
                     Wenn du die Spule vor dir hast, scanne den darauf vorhandenen QR-Code mit deinem Handy oder gib die Nummer in die Suchleiste ein.</p>
                 </details>
             </div>
             <div class="part">
-                <details><!--Update erforderlich-->
+                <details>
                     <summary>Welche Filter stehen mir zur Verfügung?</summary>
-                    <p class="answer"><i>Momentan stehen noch keine Filter zur Verfügung!</i><br>In folgenden Updates wird sich dies aber Ändern.</p>
+                    <p class="answer">In der Tabellenausgabe auf der <a href="../index.php">Startseite</a> sowie auf der Seite der Suchergebnisse kann die Ausgabe nach Hersteller, Material, Preis und Gewicht sortiert werden. Für weitere Filter nutze bitte die Suchfunktion.</p>
                 </details>
             </div>
             <div class="part">
@@ -136,10 +145,13 @@
             <div class="part">
                 <details>
                     <summary>Warum finde ich ein bestimmtes Filament nicht in der Datenbank?</summary>
-                    <p class="answer">Dafür gibt es mehrere mögliche Quellen; <br>
-                    <li>falsche Such-eingabe - versuche es mit anderen Stichworten</li>
-                    <li>gesuchtes Filament ist nicht vorhanden</li>
-                    <li>Datenbank ist gerade nicht erreichbar - Sollte dies der Fall sein, wird sich ein Administrator dem Problem Annehmen.</li></p>
+                    <p class="answer">Dafür gibt es mehrere mögliche Ursachen:<br>
+                        <ul>
+                            <li>Das gesuchte Filament ist nicht vorhanden.</li>
+                            <li>Falsche Such-Eingabe – versuche es bitte mit anderen Stichworten.</li>
+                            <li>Die Datenbank ist gerade nicht erreichbar – sollte dies der Fall sein, wird sich ein Administrator dem Problem annehmen.</li>
+                        </ul>
+                    </p>
                 </details>
             </div>
             <div class="part">
@@ -151,19 +163,22 @@
             <div class="part">
                 <details>
                     <summary>Gibt es eine Community oder einen Support für Fragen?</summary>
-                    <p class="answer">Es gibt eine kleine, aber stetig wachsende, Gemeinschaft an 3D-Druck- Begeisterten an unserer Schule. GAnz weit vorn dabei sind Jan Albrecht und Thorsten Henke.</p>
+                    <p class="answer">Es gibt eine kleine, aber stetig wachsende Gemeinschaft an 3D-Druck-Begeisterten an unserer Schule.<br>
+                        Ganz vorne mit dabei sind Jan Albrecht und Thorsten Henke.</p>
                 </details>
             </div>
         <h2>Cookies</h2>
             <div class="part">
                 <details id="cookie-frage">
                     <summary>Warum werden Cookies verwendet?</summary>
-                    <p class="answer">Die verwendeten Cookies sind technisch notwendig, um die personalisierten Website-Eigenschaften zu gewährleisten.<br>Zu diesen Funktionen gehören: die Benutzer-Farbe, der Modus (Tag/Nacht) und den Benutzeraccount.<br><button onclick="openCookieMenu()">alle Websitedaten löschen</button></p>
+                    <p class="answer">Die verwendeten Cookies sind technisch notwendig, um die personalisierten Website-Eigenschaften zu gewährleisten.<br>
+                        Zu diesen Funktionen gehören: die Benutzerfarbe, der Modus (Tag/Nacht) und der Benutzeraccount.<br>
+                        <button onclick="openCookieMenu()">Alle Websitedaten löschen</button></p>
                 </details>
             </div>
             <div class="alert" id="cookie-del-frage" style="display: none;">
                 <h2>Alle Websitedaten löschen?</h2>
-                <p>Bei Bestätigung werden alle Websitedaten unwiederruflich gelöscht.</p>
+                <p>Bei Bestätigung werden alle Websitedaten unwiderruflich gelöscht.</p>
                 <div class="button-container">
                     <button class="yes" onclick="localStorage.clear();document.getElementById('cookie-del-frage').style.display = 'none';document.getElementById('all-deleted').style.display = 'block';">Ja, alle Daten löschen</button>
                     <button class="no" onclick="document.getElementById('cookie-del-frage').style.display = 'none';">Nein, Daten behalten</button>
@@ -172,7 +187,7 @@
             <div class="alert" id="all-deleted" style="display: none;">
                 <h2>Alle Websitedaten gelöscht!</h2>
                 <p>Die Websitedaten wurden erfolgreich gelöscht.</p>
-                <p>Nach Klicken der Schaltfläche läd die Seite neu, um die Änderungen zu verarbeiten.</p>
+                <p>Nach Klicken der Schaltfläche lädt die Seite neu, um die Änderungen zu verarbeiten.</p>
                 <button class="ok" onclick="location.reload();">OK</button>
             </div>
     </div>

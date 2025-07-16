@@ -417,7 +417,7 @@ input[type="file"]::file-selector-button{
     height: 4rem;
     width: 100%;
     background-color: var(--bg-highlight-color);
-    display: flex;
+    display: none;
     bottom: 0;
     position: fixed;
     z-index: 10;
