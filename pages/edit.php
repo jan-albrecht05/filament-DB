@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="material">Material:</label>
             <select id="material" name="material" required>
                 <?php
-                $materials = ["ABS","ASA","CPE","PLA","PLA+","PETG","PETG-CF","TPU","Andere"];
+                $materials = ["ABS","ASA","CPE","HS-PLA","PLA","PLA+","PETG","PETG-CF","TPU","Andere"];
                 foreach ($materials as $mat) {
                     $selected = ($row['material'] == $mat) ? 'selected' : '';
                     echo "<option value=\"$mat\" $selected>$mat</option>";

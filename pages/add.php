@@ -114,6 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <option value="ABS">ABS</option>
                 <option value="ASA">ASA</option>
                 <option value="CPE">CPE</option>
+                <option value="HS-PLA">HS-PLA</option>
                 <option value="PLA">PLA</option>
                 <option value="PLA+">PLA+</option>
                 <option value="PETG">PETG</option>
