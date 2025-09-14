@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $anzahl = $_POST['anzahl'];
     $bedtemp = $_POST['bedtemp'];
     $nozzletemp = $_POST['nozzletemp'];
+    $ort = $_POST['ort'];
     $benchyImgName = "";
     $spoolImgName = "";
     // Handle file uploads
@@ -46,10 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     $additionalinfo = $_POST['additionalinfo'];
+    $status = isset($_POST['active']) ? 1 : 2;
 
     // Insert data into the database
-    $stmt = $db->prepare("INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, benchyImg, spoolImg, additionalinfo) 
-        VALUES (:hersteller, :farbe, :material, :dicke, :price, :gewicht, :besitzer, :anzahl, :bedtemp, :nozzletemp, :benchyImg, :spoolImg, :additionalinfo)");
+    $stmt = $db->prepare("INSERT INTO filament (hersteller, farbe, material, dicke, price, gewicht, besitzer, anzahl, bedtemp, nozzletemp, benchyImg, spoolImg, additionalinfo, active, location) 
+        VALUES (:hersteller, :farbe, :material, :dicke, :price, :gewicht, :besitzer, :anzahl, :bedtemp, :nozzletemp, :benchyImg, :spoolImg, :additionalinfo, :active, :ort)");
     $stmt->bindValue(':hersteller', $hersteller, SQLITE3_TEXT);
     $stmt->bindValue(':farbe', $farbe, SQLITE3_TEXT);
     $stmt->bindValue(':material', $material, SQLITE3_TEXT);
@@ -62,6 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindValue(':nozzletemp', $nozzletemp, SQLITE3_TEXT);
     $stmt->bindValue(':benchyImg', $benchyImgName, SQLITE3_TEXT);
     $stmt->bindValue(':spoolImg', $spoolImgName, SQLITE3_TEXT);
+    $stmt->bindValue(':active', $status, SQLITE3_INTEGER);
+    $stmt->bindValue(':ort', $ort, SQLITE3_TEXT);
     $stmt->bindValue(':additionalinfo', $additionalinfo, SQLITE3_TEXT);
     $stmt->execute();
 
@@ -148,6 +152,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="file" id="img" name="img"><br>
             <label for="img2">Bild von der Spule:</label>
             <input type="file" id="img2" name="img2"><br>
+            <label for="active">Offen</label>
+            <input type="checkbox" id="active" name="active" value="1" checked><br>
+            <label for="ort">Location:</label>
+            <input type="text" id="ort" name="ort" placeholder="Standort der Spule" required><br>
             <label for="additionalinfo">Zusätzliche Infos:</label>
             <textarea id="additionalinfo" name="additionalinfo" placeholder="Tips" rows="4"></textarea><br>
             <div id="buttons">

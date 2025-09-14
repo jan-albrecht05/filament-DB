@@ -55,7 +55,8 @@
 .filament:hover{
     background-color: var(--bg-highlight-color);
 }
-.img{
+.img {
+    position: relative; /* wichtig für z-index der Kinder */
     width: 5%;
     aspect-ratio: 1/1;
     background-size: cover;
@@ -63,12 +64,34 @@
     background-color: var(--bg-highlight-color);
     overflow: hidden;
 }
-img#benchy{
+span.unbenutzt{
+    background-color: var(--user-main-color);
+    width: 90%;
+    margin-inline: 5%;
+    font-size: 70%;
+    font-weight: bold;
+    color: var(--font-color);
+    transform: skewX(-15deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: 0px 0px 10px var(--shadow);
+    padding: .2rem 0rem;
+    user-select: none;
+}
+span.unbenutzt span{
+    transform: skewX(15deg);
+}
+img#benchy {
     width: auto;
     height: 100%;
     object-fit: cover;
     object-position: center;
     background-color: var(--bg-highlight-color);
+    display: block;
+    z-index: 1;
+    position: relative;
 }
 img#spool{
     display: none;

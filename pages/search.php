@@ -89,7 +89,7 @@
         <div id="filament-output">
             <?php
 
-            $where = ["active = 1"];
+            $where = ["active != 0"];
 
             if ($search !== '') {
                 $search_esc = SQLite3::escapeString($search);
@@ -114,6 +114,10 @@
                 $hasRows = true;
                 echo '<div class="filament" id="'.htmlspecialchars($row['id']).'">
                             <div class="img">';
+                            if($row['active'] == 2){
+                                        // Unbenutzt-Banner
+                                        echo '<span class="unbenutzt center"><span>Unbenutzt!</span></span>';
+                                    }
                                     if (!empty($row['benchyImg'])) {
                                         echo '<img id="benchy" src="../assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'" style="background-image:none" alt="">';
                                     }else{

@@ -67,6 +67,24 @@
     margin-right: .5rem;
     margin-left: .6rem;
 }
+h2.unbenutzt{
+    font-size: 200%;
+    background-color: var(--user-main-color);
+    margin: 0;
+    margin-bottom: 1rem;
+    user-select: none;
+    position: relative;
+    width: fit-content;
+    padding: .5rem 1rem;
+    transform: skewX(-15deg);
+    transition: all 0.3s;
+}
+h2.unbenutzt span{
+    transform: skewX(15deg);
+    display: inline-block;
+    color: var(--font-color);
+    font-weight: bold;
+}
 h3{
     transition: all 0.3s;
 }

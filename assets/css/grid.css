@@ -21,6 +21,7 @@
     margin-bottom: .5rem;
     transition: all .3s;
     overflow: hidden;
+    position: relative;
 }
 .filament:hover .img #spool{
     display: block !important;
@@ -30,6 +31,25 @@
     object-fit: cover;
     border-style: none;
     background: transparent;
+}
+span.unbenutzt{
+    background-color: var(--user-main-color);
+    width: 95%;
+    margin-inline: 2.5%;
+    font-size: 100%;
+    font-weight: bold;
+    color: var(--font-color);
+    transform: skewX(-15deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: 0px 0px 10px var(--shadow);
+    padding: .5rem 0rem;
+    user-select: none;
+}
+span.unbenutzt span{
+    transform: skewX(15deg);
 }
 .img img#benchy{
     background-image: url('../icons/no-benchy.png');

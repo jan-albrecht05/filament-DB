@@ -91,9 +91,9 @@
 
                     // Only show Homburgschule filaments if not logged in
                     if (!isset($_SESSION['user_id'])) {
-                        $query = "SELECT * FROM filament WHERE active = 1 AND besitzer = 'Homburgschule' ORDER BY $sort $order";
+                        $query = "SELECT * FROM filament WHERE active != 0 AND besitzer = 'Homburgschule' ORDER BY $sort $order";
                     } else {
-                        $query = "SELECT * FROM filament WHERE active = 1 ORDER BY $sort $order";
+                        $query = "SELECT * FROM filament WHERE active != 0 ORDER BY $sort $order";
                     }
 
                     $result = $db->query($query);
@@ -106,6 +106,10 @@
                             echo '
                             <div class="filament" id="'.$row['id'].'">
                                 <div class="img">';
+                                    if($row['active'] == 2){
+                                        // Unbenutzt-Banner
+                                        echo '<span class="unbenutzt center"><span>Unbenutzt!</span></span>';
+                                    }
                                     if (!empty($row['benchyImg'])) {
                                         echo '<img id="benchy" src="assets/img/uploads/'.htmlspecialchars($row['benchyImg']).'" style="background-image:none" alt="">';
                                     }else{

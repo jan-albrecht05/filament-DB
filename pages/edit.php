@@ -39,6 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bedtemp = $_POST['bedtemp'];
     $nozzletemp = $_POST['nozzletemp'];
     $additionalinfo = $_POST['additionalinfo'];
+    $ort = $_POST['ort'];
+    // If checkbox is not checked, it won't be in POST data
+    // So we set active to 0 if not set, otherwise 1
+    if ($row['active'] == 0) {
+        // Status bleibt 0, kann nicht geändert werden
+        $status = 0;
+    } else {
+        // Checked = 1, nicht checked = 2
+        $status = isset($_POST['active']) ? 1 : 2;
+    }
+    $id = $_POST['id'];
 
     // Handle file uploads (optional)
     $benchyImgName = $row['benchyImg'];
@@ -65,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Update the database
-    $stmt = $db->prepare("UPDATE filament SET hersteller = :hersteller, farbe = :farbe, material = :material, dicke = :dicke, price = :price, gewicht = :gewicht, besitzer = :besitzer, anzahl = :anzahl, bedtemp = :bedtemp, nozzletemp = :nozzletemp, benchyImg = :benchyImg, spoolImg = :spoolImg, additionalinfo = :additionalinfo WHERE id = :id");
+    $stmt = $db->prepare("UPDATE filament SET hersteller = :hersteller, farbe = :farbe, material = :material, dicke = :dicke, price = :price, gewicht = :gewicht, besitzer = :besitzer, anzahl = :anzahl, bedtemp = :bedtemp, nozzletemp = :nozzletemp, benchyImg = :benchyImg, spoolImg = :spoolImg, additionalinfo = :additionalinfo, active = :active, location = :ort WHERE id = :id");
     $stmt->bindValue(':hersteller', $hersteller, SQLITE3_TEXT);
     $stmt->bindValue(':farbe', $farbe, SQLITE3_TEXT);
     $stmt->bindValue(':material', $material, SQLITE3_TEXT);
@@ -80,6 +91,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindValue(':spoolImg', $spoolImgName, SQLITE3_TEXT);
     $stmt->bindValue(':additionalinfo', $additionalinfo, SQLITE3_TEXT);
     $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
+    $stmt->bindValue(':ort', $ort, SQLITE3_TEXT);
+    $stmt->bindValue(':active', $status, SQLITE3_INTEGER);
     $stmt->execute();
 
     header("Location: filament.php?id=" . $id);
@@ -161,6 +174,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="file" id="img" name="img"><br>
             <label for="img2">Bild von der Spule (leer lassen für kein Update):</label>
             <input type="file" id="img2" name="img2"><br>
+            <label for="active">Offen</label>
+            <input type="checkbox" id="active" name="active" value="1"
+                <?php
+                    if ($row['active'] == 1) echo "checked";
+                    if ($row['active'] == 0) echo "disabled";
+                ?>
+            ><br>
+            <label for="ort">Location:</label>
+            <input type="text" id="ort" name="ort" placeholder="Standort der Spule" value="<?php echo htmlspecialchars($row['location']); ?>"><br>
             <label for="additionalinfo">Zusätzliche Infos:</label>
             <textarea id="additionalinfo" name="additionalinfo" rows="4"><?php echo htmlspecialchars($row['additionalinfo']); ?></textarea><br>
             <div id="buttons">

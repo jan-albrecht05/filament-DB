@@ -77,6 +77,12 @@
                         </div>
                     </div>
                     <div id="right">
+                        <?php
+                        if($row['active'] == 2){
+                            // Unbenutzt-Banner
+                            echo '<h2 class="unbenutzt"><span>NEU!</span></h2>';
+                        }
+                        ?>
                         <p id="ID">ID: <?php echo ($row["id"])?></p>
                         <h1 id="hersteller">Hersteller: <?php echo ($row["hersteller"])?></h1>
                         <h2 id="material">Material: <?php echo ($row["material"])?></h2>
@@ -86,6 +92,7 @@
                         <h3 id="gewicht">Gewicht: <?php echo ($row["gewicht"])?>g</h3>
                         <h3 id="besitzer">Besitzer: <?php echo ($row["besitzer"])?></h3>
                         <h3 id="anzahl">Anzahl Rollen: <?php echo ($row["anzahl"])?></h3>
+                        <h3 id="ort">Lagerort: <?php echo ($row["location"])?></h3>
                         <h2 id="printsettings">Druckeinstellungen:</h2>
                         <h3 id="bedtemp"><span class="material-symbols-outlined">heat</span> <?php echo ($row["bedtemp"])?>°C</h3>
                         <h3 id="nozzletemp"><span class="material-symbols-outlined">arrow_downward</span> <?php echo ($row["nozzletemp"])?>°C</h3>

@@ -332,6 +332,10 @@ img{
     width: 50%;
     padding: .2rem .5rem;
 }
+#add-form input[type="checkbox"]{
+    width: 1rem;
+    accent-color: var(--user-main-color);
+}
 #add-form input:disabled{
     background-color: var(--bg-color);
     color: var(--bg-highlight2-color);
