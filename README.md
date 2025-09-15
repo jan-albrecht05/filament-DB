@@ -72,7 +72,9 @@
   - Temperatur des Druckbetts
   - Bild vom 3D-Benchy
   - Bild von der Spule
+  - Standort der Spule
   - Zusätzliche Infos/Tags für die Suche
+  - Status (Neu/Nutzbar/verbraucht)
 
 ### Die Benutzer-SQLite-Datenbank enthält:
 
@@ -86,6 +88,11 @@
 ## 📷 Handling der Bilder
 
 Bilder werden in den Ordner ```/assets/img/uploads/``` hochgeladen und der Link in der Datenbank gespeichert.
+
+---
+
+## ⏭️ next Steps
+  - UI Personalisierung in Benutzer-Datenbank einfügen (Mode, Farbe)
 
 ---
 
